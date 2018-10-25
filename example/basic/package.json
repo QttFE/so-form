@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "element-ui": "^2.4.8",
-    "q-form": "../q-form",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -18,6 +17,8 @@
     "@vue/cli-service": "^3.0.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-html": "^4.0.6",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {

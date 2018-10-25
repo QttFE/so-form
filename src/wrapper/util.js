@@ -37,3 +37,25 @@ export function deepCopy (o, c) {
   }
   return c
 }
+
+/**
+ * 解析对象路径
+ *
+ * @export
+ * @param {*} obj
+ * @param {*} path
+ * @returns
+ */
+export function parsePath (obj, path) {
+  const bailRE = /[^\w.$]/
+  if (bailRE.test(path)) return
+
+  const segments = path.split('.')
+  // let obj = this
+  for (let i = 0; i < segments.length; i++) {
+    if (!obj) return
+    obj = obj[segments[i]]
+  }
+  return obj
+  // }
+}

@@ -1,4 +1,4 @@
-import { formatValue, getCleanProps, deepCopy } from './util'
+import { formatValue, deepCopy } from './util'
 
 /**
  * preview态
@@ -32,7 +32,6 @@ class WrapperClass {
 
   Input = (h, props, vm) => {
     const { status } = props
-    const otherProps = getCleanProps(props);
 
     let config = {
       ...props,
@@ -50,9 +49,6 @@ class WrapperClass {
   }
 
   Select(h, props, vm) {
-    let methods = deepCopy(props.on) || {}
-    const value = formatValue(props.value) // 格式化值
-
     if (!props.on) props.on = {}
 
     props.on['input'] = (e) => {
