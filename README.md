@@ -95,13 +95,12 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 | Name                 | Type       | Default      | Description               |   example                           |
 |----------------------|------------|--------------|---------------------------|-------------------------------------|
 | label                | string   | '' | 表单标签名称 | `姓名` |
-| name                 | string   |   | 会去<iForm>的model对象里找到值进行双向绑定（支持多级路径，如'obj.a.b'或'obj.0.b'） | 'name' 或 'obj.name'  |
+| name                 | string   |   | 会去`<iForm>`的model对象里找到值进行双向绑定（支持多级路径，如'obj.a.b'或'obj.0.b'） | 'name' 或 'obj.name'  |
 | type                 | string   | '' | 具体渲染的表单类型, 目前支持element常用的全部组件，若不支持可在企业微信找`王瑞`（ps: 全小写） |  'input'    |
-| render               | function |  | 若`type`的类型为 `custom` | (h) => <span>这个一个测试render</span> |
+| render               | function |  | 若`type`的类型为 `custom` | `(h) => <span>这个一个测试render</span>` |
 | props                | Object   | {} |  传递实际功能组件的参数列表    |     |
 | formItemProps        | Object   | {} |  传递给 element form-item 组件的参数列表    |  {}   |
-|   |
-| slots                | Object   | {} |  传给 `element form-item` 的slot（ps：参数 h 必填）    |  { label: (h) =>  (<span>text label</spa>) }  |
+| slots                | Object   | {} |  传给 `element form-item` 的slot（ps：参数 h 必填）    |  `{ label: (h) =>  (<span>text label</spa>) }`  |
 |  比如 vue 事件 或者 指令 的使用参数 [详见 vue jsx 写法](https://cn.vuejs.org/v2/guide/render-function.html#%E6%B7%B1%E5%85%A5-data-%E5%AF%B9%E8%B1%A1)，写法一致, 比如`@change`事件， 会变成参数 `on: { change: () => {}`，诸如此类 }  |
 
 
