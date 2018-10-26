@@ -31,6 +31,7 @@ class WrapperClass {
   }
 
   Input = (h, props, vm) => {
+    if (!props.on) props.on = {}
     const { status } = props
 
     let config = {
