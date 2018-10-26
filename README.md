@@ -85,9 +85,9 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 ## Api
 ### iForm props
 
-| Name                 | Type      | Default      | Description                                                        |
-|----------------------|-----------|--------------|--------------------------------------------------------------------|
-| model            | Object  | {} | 表单数据对象，form-item的数据来源         |
+| Name                 | Type      | Default      | Description                   | example                             |
+|----------------------|-----------|--------------|-------------------------------|-------------------------------------|
+| model            | Object  | {} | 表单数据对象，form-item的数据来源         |  `{ name: '123', age: 18 }` |
 |其他参数详见[`element form组件`](http://element-cn.eleme.io/#/zh-CN/component/form#form-attributes)，使用方式一致 |
 
 
