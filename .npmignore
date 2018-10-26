@@ -13,6 +13,9 @@
 # example
 /example
 
+# static
+/static
+
 # misc
 .DS_Store
 .env.local

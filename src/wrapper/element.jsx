@@ -77,7 +77,7 @@ class WrapperClass {
     return (
       <this.ele.CheckboxGroup {...props} >
       {props.options && props.options.map(option => (
-        <this.ele.Checkbox value={option} label={option}>{option}</this.ele.Checkbox>
+        <this.ele.Checkbox value={option.value} label={option.value}>{option.name}</this.ele.Checkbox>
       ))}
       </this.ele.CheckboxGroup>
     )
@@ -94,7 +94,7 @@ class WrapperClass {
     return (
       <this.ele.RadioGroup {...props} >
       {props.options && props.options.map(option => (
-        <this.ele.Radio key={option} label={option}>{option}</this.ele.Radio>
+        <this.ele.Radio key={option.value} label={option.value}>{option.name}</this.ele.Radio>
       ))}
       </this.ele.RadioGroup>
     )

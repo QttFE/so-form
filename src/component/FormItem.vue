@@ -25,7 +25,7 @@ export default {
       }
     }
 
-    return (
+  return (
     <this.$formmWrapped.ele.FormItem {...formItemProps}>
       {attrs.slots && Object.keys(attrs.slots).map(slot => (
         <div style="display: inline-block;" slot={slot}>
