@@ -46,7 +46,7 @@ export function deepCopy (o, c) {
  * @param {*} path
  * @returns
  */
-export function parsePath (obj, path) {
+export function parsePath (obj, path="") {
   const bailRE = /[^\w.$]/
   if (bailRE.test(path)) return
 
@@ -58,4 +58,12 @@ export function parsePath (obj, path) {
   }
   return obj
   // }
+}
+
+export function checkWhen(input) {
+  if (typeof input === 'boolean') return input
+
+  if (typeof input === 'function') {
+    return input()
+  }
 }

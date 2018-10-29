@@ -1,12 +1,22 @@
-<script>
-import {parsePath} from '../wrapper/util'
+<script lang="jsx">
+import {parsePath, checkWhen} from '../wrapper/util'
 import set from 'set-object-path'
+
+function context2Jsx(h, input) {
+  if (typeof input === 'string') return <span>{input}</span>
+
+  if (typeof input === 'function') {
+    return input(h)
+  }
+}
 
 export default {
   inject: ['elForm'],
   render(h) {
-    let attrs = this.$attrs
+    console.log(this)
+    let attrs = this.$attrs || {}
     attrs.props = attrs.props || {}
+    attrs.on = attrs.on || {}
 
     // 从model层拿数据
     attrs.props.value = parsePath(this.elForm.model, attrs.name)
@@ -25,6 +35,10 @@ export default {
       }
     }
 
+    let hasWhen = attrs.hasOwnProperty('when')
+    let isWhen = checkWhen(attrs.when)
+    if (hasWhen && !isWhen) return null
+
   return (
     <this.$formmWrapped.ele.FormItem {...formItemProps}>
       {attrs.slots && Object.keys(attrs.slots).map(slot => (
@@ -32,9 +46,35 @@ export default {
           {attrs.slots[slot](h)}
         </div>
       ))}
-      {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
+      {
+      // top
+        attrs.top && (
+          <div>{context2Jsx(h, attrs.top)}</div>
+        )
+      }
+      {/* main */}
+      <div class="formm-wrapped_flex">
+        {/* prefix */}
+        {attrs.prefix && context2Jsx(h, attrs.prefix)}
+        {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
+        {/* suffix */}
+        {attrs.suffix && context2Jsx(h, attrs.suffix)}
+      </div>
+
+      {
+        // help
+        attrs.help && (
+          <div>{context2Jsx(h, attrs.help)}</div>
+        )
+      }
     </this.$formmWrapped.ele.FormItem>
     )
   }
 }
 </script>
+
+<style>
+.formm-wrapped_flex {
+  display: flex;
+}
+</style>

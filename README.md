@@ -115,16 +115,17 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 ## todo
 
 - [x] label可render
-- [ ] `<if>`逻辑组件
-- [ ] `<FormColumns>` 组件
-- [ ] `option`组件支持传参
+- [x] `<if>`逻辑组件
+- [x] `<FormColumns>` 组件
+- [x] `option`组件支持传参
 - [ ] 全局切换`edit`/`preview`状态
-- [ ] `formItem` 支持 `prefix` 等插槽
-- [ ] `when`/`hide` 参数 可以控制`<formitem>`渲染
+- [x] `formItem` 支持 `prefix` 等插槽
+- [x] `when`/` 参数 可以控制`<formitem>`渲染
 - [ ] 过滤不需要的`props`
 - [ ] 优化状态联动
 - [ ] 支持iview
 - [ ] 完善错误提示
+- [ ] 完善文档
 
 
 ## issue 🤔

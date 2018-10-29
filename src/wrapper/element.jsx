@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 import { formatValue, deepCopy } from './util'
+import omit from 'object.omit'
 
 /**
  * preview态
@@ -31,7 +33,6 @@ class WrapperClass {
   }
 
   Input = (h, props, vm) => {
-    if (!props.on) props.on = {}
     const { status } = props
 
     let config = {
@@ -50,8 +51,6 @@ class WrapperClass {
   }
 
   Select(h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -60,16 +59,29 @@ class WrapperClass {
 
     return (
       <this.ele.Select {...props}>
-        {props.options && props.options.map(option => (
-          <this.ele.Option value={option.id} label={option.name || option.label || ''}>{option.name || option.label || ''}</this.ele.Option>
-        ))}
+        {props.options && props.options.map(option => {
+          let attr = {
+            on: {
+              ...(option.on || {})
+            },
+            props: {
+              value: option.id || option.value,
+              label: option.name || option.label || '',
+              ...omit(option, ['id', 'value', 'name', 'label', 'on'])
+            }
+          }
+
+          return (
+            <this.ele.Option {...attr}>
+              {option.name || option.label || ''}
+            </this.ele.Option>
+          )}
+        )}
       </this.ele.Select>
     )
   }
 
   Checkbox (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -77,16 +89,29 @@ class WrapperClass {
 
     return (
       <this.ele.CheckboxGroup {...props} >
-      {props.options && props.options.map(option => (
-        <this.ele.Checkbox value={option.value} label={option.value}>{option.name}</this.ele.Checkbox>
-      ))}
+        {props.options && props.options.map(option => {
+          let attr = {
+            on: {
+              ...(option.on || {})
+            },
+            props: {
+              value: option.id || option.value,
+              label: option.name || option.label || '',
+              ...omit(option, ['id', 'value', 'name', 'label'])
+            }
+          }
+
+          return (
+            <this.ele.Checkbox {...attr}>
+              {option.name || option.label || ''}
+            </this.ele.Checkbox>
+          )}
+        )}
       </this.ele.CheckboxGroup>
     )
   }
 
   Radio (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -94,16 +119,28 @@ class WrapperClass {
 
     return (
       <this.ele.RadioGroup {...props} >
-      {props.options && props.options.map(option => (
-        <this.ele.Radio key={option.value} label={option.value}>{option.name}</this.ele.Radio>
-      ))}
+        {props.options && props.options.map(option => {
+          let attr = {
+            on: {
+              ...(option.on || {})
+            },
+            props: {
+              label: option.id || option.value,
+              ...omit(option, ['id', 'value', 'name', 'label'])
+            }
+          }
+
+          return (
+            <this.ele.Radio {...attr}>
+              {option.name || option.label || ''}
+            </this.ele.Radio>
+          )}
+        )}
       </this.ele.RadioGroup>
     )
   }
 
   Switch (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -114,8 +151,6 @@ class WrapperClass {
   }
 
   Slider (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -126,8 +161,6 @@ class WrapperClass {
   }
 
   DatePicker (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -138,8 +171,6 @@ class WrapperClass {
   }
 
   TimeSelect (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -150,8 +181,6 @@ class WrapperClass {
   }
 
   TimePicker (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -162,8 +191,6 @@ class WrapperClass {
   }
 
   InputNumber (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -174,8 +201,6 @@ class WrapperClass {
   }
 
   Rate (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -186,8 +211,6 @@ class WrapperClass {
   }
 
   Cascader (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -198,8 +221,6 @@ class WrapperClass {
   }
 
   Tree (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
@@ -210,8 +231,6 @@ class WrapperClass {
   }
 
   Upload (h, props, vm) {
-    if (!props.on) props.on = {}
-
     props.on['input'] = (e) => {
       vm.$emit('input', e)
     }
