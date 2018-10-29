@@ -11,7 +11,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 - 自动双向数据绑定
 - 表单支持自定义render（[jsx写法](https://cn.vuejs.org/v2/guide/render-function.html#JSX)）
 - 支持拓展components
-- ~~各种方便插槽~~(todo)
+- 各种方便插槽
 - ~~全局切换`edit`/`preview`状态~~(todo)
 
 ## example
