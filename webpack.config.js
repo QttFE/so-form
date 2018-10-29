@@ -1,6 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
-// const ExtractTextWebapckPlugin = require('extract-text-webpack-plugin') //引入插件
+const ExtractTextWebapckPlugin = require('extract-text-webpack-plugin') //引入插件
 const webpack = require('webpack')
 
 module.exports = {
@@ -25,6 +25,14 @@ module.exports = {
           }
         }
       },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader',
+      //     'css-loader',
+      //     'postcss-loader',
+      //   ],
+      // },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
@@ -39,5 +47,7 @@ module.exports = {
   //   minimizer: true
   // },
 
-  plugins: [new VueLoaderPlugin()]
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
