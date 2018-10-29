@@ -63,8 +63,8 @@ export default {
 
       {
         // help
-        attrs.help && (
-          <div>{context2Jsx(h, attrs.help)}</div>
+        attrs.bottom && (
+          <div>{context2Jsx(h, attrs.bottom)}</div>
         )
       }
     </this.$formmWrapped.ele.FormItem>
