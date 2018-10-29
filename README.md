@@ -22,7 +22,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 
 例如下图，通过左边的简单配置，就可以生成右边表单。
 
-![example](./static/basic.gif)
+![example](https://git.qutoutiao.net/npm/q-form/raw/master/static/basic.gif)
 
 ## install
 
