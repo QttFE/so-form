@@ -55,7 +55,7 @@ export default {
       <div class="formm-wrapped_flex">
         {attrs.prefix && context2Jsx(h, attrs.prefix)}
         {/* prefix */}
-        <div>
+        <div class="formm-wrapped_div">
           {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
         </div>
         {/* suffix */}
@@ -77,5 +77,8 @@ export default {
 <style>
 .formm-wrapped_flex {
   display: flex;
+}
+.formm-wrapped_div {
+  width: 100%;
 }
 </style>
