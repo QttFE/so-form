@@ -53,7 +53,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 ```html
   <!-- model 为表单数据中心，iFormItem 通用的vue表单会自动数据绑定 -->
   <iForm :model="model">
-    <iFormItem v-for="(col, index) in columns" v-bind="col" :key="index"></iFormItem>
+    <iFormRows :rows="rows"></iFormRows>
   </iForm>
 
 ```
@@ -61,7 +61,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 ```js
   // 注意，需要把columns写在computed内部（若卸载data后续会有context问题）
   computed: {
-    columns (h) {
+    rows (h) {
       return [
         { label: '任务名称', name: 'job', type: 'input'},
         { label: '短信内容', name: 'msg', type: 'input', on: {}, props: {
