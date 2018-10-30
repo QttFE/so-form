@@ -53,9 +53,11 @@ export default {
       }
       {/* main */}
       <div class="formm-wrapped_flex">
-        {/* prefix */}
         {attrs.prefix && context2Jsx(h, attrs.prefix)}
-        {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
+        {/* prefix */}
+        <div>
+          {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
+        </div>
         {/* suffix */}
         {attrs.suffix && context2Jsx(h, attrs.suffix)}
       </div>
