@@ -25,14 +25,14 @@ module.exports = {
           }
         }
       },
-      // {
-      //   test: /\.css$/,
-      //   use: [
-      //     'style-loader',
-      //     'css-loader',
-      //     'postcss-loader',
-      //   ],
-      // },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
