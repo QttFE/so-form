@@ -28,13 +28,13 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 
 ```shell
   # vue支持 jsx写法
-  npm i babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx --dev
+  npm i babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx --save-dev
 
   # 在.babelrc文件中加入
     "plugins": ["transform-vue-jsx"]
 
   # 引入
-  npm i @qtt/q-form --dev
+  npm i @qtt/q-form --save
 
 ```
 
