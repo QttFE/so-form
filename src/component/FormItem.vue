@@ -13,7 +13,6 @@ function context2Jsx(h, input) {
 export default {
   inject: ['elForm'],
   render(h) {
-    console.log(this)
     let attrs = this.$attrs || {}
     attrs.props = attrs.props || {}
     attrs.on = attrs.on || {}
