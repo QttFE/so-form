@@ -109,8 +109,6 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 
 ![form-item](https://git.qutoutiao.net/npm/q-form/raw/master/static/prefix.png)
 
-
-
 ## 联动
 
 这部分，主要在组件的回调，比如 `on: { click: () => this.model.testName = '测试' }`，联动修改其他model层数据
@@ -118,6 +116,24 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 ## 校验
 
 用法，参数位置，参数都跟 `ELEMENT` 一致
+
+## 组件
+- custom(自己写render)
+- input
+- textarea
+- select
+- checkbox
+- radio
+- switch
+- slider
+- datepicker
+- timeselect
+- timepicker
+- inputnumber
+- rate
+- cascader
+- tree
+- upload
 
 ## todo
 
