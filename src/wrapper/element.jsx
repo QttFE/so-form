@@ -50,6 +50,24 @@ class WrapperClass {
     return <this.ele.Input {...config}></this.ele.Input>
   }
 
+  Textarea = (h, props, vm) => {
+    const { status } = props
+
+    let config = {
+      ...props,
+      on: deepCopy(props.on) || {},
+      props: Object.assign(deepCopy(props.props), { type: 'textarea' }),
+    }
+    config.on.input = (e) => {
+      props.on.input && props.on.input(e)
+      vm.$emit('input', e)
+    }
+
+    if (status === 'preview') return renderValue(h, formatValue(props.value)) // 处理预览态
+
+    return <this.ele.Input {...config}></this.ele.Input>
+  }
+
   Select(h, props, vm) {
     props.on['input'] = (e) => {
       vm.$emit('input', e)
@@ -248,10 +266,10 @@ class WrapperClass {
     const result = [
       'Custom',
       'Input',
+      'Textarea',
       'Select',
       'Checkbox',
       'Radio',
-      // 'AutoComplete',
       'Switch',
       'Slider',
       'DatePicker',
