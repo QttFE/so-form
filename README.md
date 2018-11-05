@@ -12,7 +12,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 - 表单支持自定义render（[jsx写法](https://cn.vuejs.org/v2/guide/render-function.html#JSX)）
 - 支持拓展components
 - 各种方便插槽
-- ~~全局切换`edit`/`preview`状态~~(todo)
+- 全局切换`edit`/`preview`状态
 
 ## example
 
@@ -117,6 +117,42 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 
 用法，参数位置，参数都跟 `ELEMENT` 一致
 
+## 状态
+
+通过`ref`获取`form`实例
+
+### 状态枚举
+NoForm 认为表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态)
+
+
+### getGlobalStatus
+获取form表单内的组件状态
+
+```js
+  this.$refs.xxxx.getGlobalStatus(); // get global status
+```
+
+### setGlobalStatus
+设置form表单全局状态
+
+```js
+  this.$refs.xxxx.setGlobalStatus('edit'); // set up global status
+```
+
+### getStatus
+获取单个组件状态
+
+```js
+this.core.getStatus('username'); // get single item's status
+```
+
+### setStatus
+设置单个组件状态
+
+```js
+this.core.setStatus('username', 'edit'); // modify single item's status
+```
+
 ## 组件
 - custom(自己写render)
 - input
@@ -141,7 +177,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 - [x] `<if>`逻辑组件
 - [x] `<FormColumns>` 组件
 - [x] `option`组件支持传参
-- [ ] 全局切换`edit`/`preview`状态
+- [x] 全局切换`edit`/`preview`状态
 - [x] `formItem` 支持 `prefix` 等插槽
 - [x] `when`/` 参数 可以控制`<formitem>`渲染
 - [ ] 过滤不需要的`props`
