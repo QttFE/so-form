@@ -143,14 +143,14 @@ NoForm 认为表单状态分为以下三种类型：edit(编辑态), preview(预
 获取单个组件状态
 
 ```js
-this.core.getStatus('username'); // get single item's status
+this.$refs.xxxx.getStatus('username'); // get single item's status
 ```
 
 ### setStatus
 设置单个组件状态
 
 ```js
-this.core.setStatus('username', 'edit'); // modify single item's status
+this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 ```
 
 ## 组件
