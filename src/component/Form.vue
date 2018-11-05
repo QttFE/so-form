@@ -30,7 +30,6 @@ export default {
     getGlobalStatus () {
       return this.statusCenter
     }
-    // this.core.setGlobalStatus('edit');
   },
   render (h) {
     let config = {
@@ -51,7 +50,6 @@ export default {
     })
   },
   mounted () {
-
     if (this.$refs.form) {
       this.validate = this.$refs.form.validate
       this.validateField = this.$refs.form.validateField

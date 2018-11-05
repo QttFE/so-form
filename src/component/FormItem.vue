@@ -51,7 +51,7 @@ export default {
         </div>
       ))}
       {
-      // top
+      // top 插槽
         attrs.top && (
           <div>{context2Jsx(h, attrs.top)}</div>
         )
@@ -59,16 +59,16 @@ export default {
       {/* main */}
       <div class="formm-wrapped_flex">
         {attrs.prefix && context2Jsx(h, attrs.prefix)}
-        {/* prefix */}
+        {/* prefix 插槽 */}
         <div class="formm-wrapped_div">
           {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
         </div>
-        {/* suffix */}
+        {/* suffix 插槽 */}
         {attrs.suffix && context2Jsx(h, attrs.suffix)}
       </div>
 
       {
-        // help
+        // bottom 插槽
         attrs.bottom && (
           <div>{context2Jsx(h, attrs.bottom)}</div>
         )
@@ -77,7 +77,7 @@ export default {
     )
   },
   mounted () {
-    // 给statusCenter初始化
+    // initialize statusCenter && callback
     if (this.$attrs.name && this.statusEmitter) {
       this.statusEmitter.core.emit('init', {[this.$attrs.name]: 'edit'})
       this.statusEmitter.core.on('update', (obj) => {

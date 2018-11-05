@@ -6,7 +6,6 @@
 
 <script>
 import FormItem from './FormItem'
-import {parsePath, checkWhen, deepCopy} from '../wrapper/util'
 
 export default {
   props: {
