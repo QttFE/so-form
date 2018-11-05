@@ -5,16 +5,19 @@ import iFormRows from './component/FormRows.vue'
 
 const install = function(Vue, opts = {}) {
   let wrappedComponent = wrapperElement(opts.source)
-  Vue.prototype.$formmWrapped = {...wrappedComponent, ...(opts.component || {})};
+  Vue.prototype.$formmWrapped = {
+    ...wrappedComponent,
+    ...(opts.component || {})
+  }
 
-  Vue.component('iForm', iForm);
-  Vue.component('iFormItem', iFormItem);
-  Vue.component('iFormRows', iFormRows);
-};
+  Vue.component('iForm', iForm)
+  Vue.component('iFormItem', iFormItem)
+  Vue.component('iFormRows', iFormRows)
+}
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
+  install(window.Vue)
 }
 
 export default install

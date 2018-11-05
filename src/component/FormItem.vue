@@ -11,11 +11,16 @@ function context2Jsx(h, input) {
 }
 
 export default {
-  inject: ['elForm'],
+  inject: ['elForm', 'statusEmitter'],
+  data: () => ({
+    status: 'edit'
+  }),
   render(h) {
     let attrs = this.$attrs || {}
     attrs.props = attrs.props || {}
     attrs.on = attrs.on || {}
+    // 添加status
+    attrs.status = this.status || 'edit'
 
     // 从model层拿数据
     attrs.props.value = parsePath(this.elForm.model, attrs.name)
@@ -70,6 +75,19 @@ export default {
       }
     </this.$formmWrapped.ele.FormItem>
     )
+  },
+  mounted () {
+    // 给statusCenter初始化
+    if (this.$attrs.name && this.statusEmitter) {
+      this.statusEmitter.core.emit('init', {[this.$attrs.name]: 'edit'})
+      this.statusEmitter.core.on('update', (obj) => {
+        if (!obj) return
+        if (obj.name === this.$attrs.name && this.status !== obj.status) {
+          this.status = obj.status
+          this.$forceUpdate()
+        }
+      })
+    }
   }
 }
 </script>

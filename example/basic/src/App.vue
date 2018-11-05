@@ -4,6 +4,8 @@
       <!-- <iFormItem v-for="(col, index) in columns" v-bind="col" :key="index"></iFormItem> -->
       <iFormRows :rows="columns"></iFormRows>
     </iForm>
+    <button @click="setStatus">status preview</button>
+    <button @click="setStatusEdit">status edit</button>
     <button @click="reset">reset</button>
     <button @click="validate">validate</button>
   </div>
@@ -15,6 +17,7 @@ export default {
   data: () => ({
     model: {
       job: '',
+      job1: '',
       msg: '',
       nickname: '',
       isNickMsg: 1,
@@ -31,12 +34,14 @@ export default {
   computed: {
     columns (h) {
       return [
-        { label: '任务名称', name: 'job', type: 'input', top: (h) => (<span>'top'</span>), suffix: 'suffix'},
+        // { label: '任务名称', name: 'job', type: 'input', top: (h) => (<span>'top'</span>), suffix: 'suffix'},
+        { label: '任务名称', name: 'job', type: 'input'},
+        { label: 'datepicker', name: 'job1', type: 'InputNumber'},
         { label: '短信内容', name: 'msg', type: 'textarea', on: {}},
         { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是', border: true, on: {change: (e) => {
           console.log(e, 123)
         }}}]},
-        { label: '是否昵称短信', name: 'isNickMsg1', type: 'checkbox', options: [{value: 1, name: '否'}, {value: 2, name:'是'}] , on: {}},
+        { label: '是否昵称短信', name: 'isNickMsg1', type: 'checkbox', options: [{value: 1, name: 'a'}, {value: 2, name:'b'}] , on: {}},
         { label: '昵称短信内容', name: 'nickname', type: 'input', on: {}, props: {
             type: 'textarea'
         }},
@@ -52,6 +57,13 @@ export default {
     }
   },
   methods: {
+    setStatus () {
+      // this.$refs.ruleForm.setStatus('job', 'preview')
+      this.$refs.ruleForm.setGlobalStatus('preview')
+    },
+    setStatusEdit () {
+      this.$refs.ruleForm.setGlobalStatus('edit')
+    },
     ttt (e) {
       this.model.slider = 20
     },
