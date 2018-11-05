@@ -187,6 +187,12 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 - [ ] 完善文档
 
 
+## changelog
+
+*2018-11-05*
+
+添加 全局切换`edit`/`preview`状态 功能
+
 ## issue 🤔
 
 > 如果存在`bug`或者有好的一些改善意见建议，💡
