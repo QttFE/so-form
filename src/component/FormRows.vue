@@ -11,8 +11,7 @@ export default {
   props: {
     rows: {
       required: true,
-      type: Array,
-      default: () => ([])
+      type: Array
     }
   }
 }

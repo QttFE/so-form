@@ -3,17 +3,17 @@ export function formatValue(value) {
   return value
 }
 
-export const curry = (fn, arity = fn.length, ...args) =>
-  arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args)
+// export const curry = (fn, arity = fn.length, ...args) =>
+//   arity <= args.length ? fn(...args) : curry.bind(null, fn, arity, ...args)
 
-export function getCleanProps(props) {
-  const otherProps = { ...props }
-  delete otherProps.status
-  delete otherProps.value
-  delete otherProps.inset
-  delete otherProps.error
-  return otherProps
-}
+// export function getCleanProps(props) {
+//   const otherProps = { ...props }
+//   delete otherProps.status
+//   delete otherProps.value
+//   delete otherProps.inset
+//   delete otherProps.error
+//   return otherProps
+// }
 
 // 深复制，要想达到深复制就需要用递归
 /* eslint-disable */

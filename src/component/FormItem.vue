@@ -1,5 +1,5 @@
 <script lang="jsx">
-import {parsePath, checkWhen} from '../wrapper/util'
+import {parsePath, checkWhen, deepCopy} from '../wrapper/util'
 import set from 'set-object-path'
 
 function context2Jsx(h, input) {
@@ -16,11 +16,20 @@ export default {
     status: 'edit'
   }),
   render(h) {
-    let attrs = this.$attrs || {}
-    attrs.props = attrs.props || {}
-    attrs.on = attrs.on || {}
-    // 添加status
-    attrs.status = this.status || 'edit'
+    let props = this.$attrs || {}
+    props.props = props.props || {}
+    props.on = props.on || {}
+    props.status = this.status || 'edit'
+
+    let attrs = {
+      ...props,
+      on: deepCopy(props.on) || {},
+      props: deepCopy(props.props),
+    }
+    attrs.on.input = (e) => {
+      props.on.input && props.on.input(e)
+      this.$emit('input', e)
+    }
 
     // 从model层拿数据
     attrs.props.value = parsePath(this.elForm.model, attrs.name)

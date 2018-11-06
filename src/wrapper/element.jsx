@@ -44,44 +44,20 @@ class WrapperClass {
   Input = (h, props, vm) => {
     const { status } = props
 
-    let config = {
-      ...props,
-      on: deepCopy(props.on) || {},
-      props: deepCopy(props.props),
-    }
-    config.on.input = (e) => {
-      props.on.input && props.on.input(e)
-      vm.$emit('input', e)
-    }
-
     if (status === 'preview') return renderValue(h, formatValue(props.props.value)) // 处理预览态
 
-    return <this.ele.Input {...config}></this.ele.Input>
+    return <this.ele.Input {...props}></this.ele.Input>
   }
 
   Textarea = (h, props, vm) => {
     const { status } = props
 
-    let config = {
-      ...props,
-      on: deepCopy(props.on) || {},
-      props: Object.assign(deepCopy(props.props), { type: 'textarea' }),
-    }
-    config.on.input = (e) => {
-      props.on.input && props.on.input(e)
-      vm.$emit('input', e)
-    }
+    if (status === 'preview') return renderValue(h, formatValue(props.props.value)) // 处理预览态
 
-    if (status === 'preview') return renderValue(h, formatValue(config.props.value)) // 处理预览态
-
-    return <this.ele.Input {...config}></this.ele.Input>
+    return <this.ele.Input {...props}></this.ele.Input>
   }
 
   Select(h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') return <this.ele.Select disabled value={props.props.value} />
 
     return (
@@ -109,9 +85,6 @@ class WrapperClass {
   }
 
   Checkbox (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
     if (props.status === 'preview') return renderValue(h, formatValue(props.props.value))
 
     return (
@@ -139,9 +112,6 @@ class WrapperClass {
   }
 
   Radio (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
     if (props.status === 'preview') return renderOption(h, props)
 
     return (
@@ -168,9 +138,6 @@ class WrapperClass {
   }
 
   Switch (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
 
     if (props.status === 'preview') return renderValue(h, props.props.value)
 
@@ -180,10 +147,6 @@ class WrapperClass {
   }
 
   Slider (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.Slider {...(props)}></this.ele.Slider>
@@ -195,10 +158,6 @@ class WrapperClass {
   }
 
   DatePicker (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.DatePicker {...props}></this.ele.DatePicker>
@@ -210,10 +169,6 @@ class WrapperClass {
   }
 
   TimeSelect (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.TimeSelect {...props}></this.ele.TimeSelect>
@@ -225,10 +180,6 @@ class WrapperClass {
   }
 
   TimePicker (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.TimePicker {...props}></this.ele.TimePicker>
@@ -240,10 +191,6 @@ class WrapperClass {
   }
 
   InputNumber (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') return renderValue(h, formatValue(props.props.value))
 
     return (
@@ -252,10 +199,6 @@ class WrapperClass {
   }
 
   Rate (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.Rate {...props}></this.ele.Rate>
@@ -267,10 +210,6 @@ class WrapperClass {
   }
 
   Cascader (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.Cascader {...props}></this.ele.Cascader>
@@ -282,10 +221,6 @@ class WrapperClass {
   }
 
   Tree (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.Tree {...props}></this.ele.Tree>
@@ -297,10 +232,6 @@ class WrapperClass {
   }
 
   Upload (h, props, vm) {
-    props.on['input'] = (e) => {
-      vm.$emit('input', e)
-    }
-
     if (props.status === 'preview') {
       props.props.disabled = true
       return <this.ele.Upload {...props}></this.ele.Upload>
