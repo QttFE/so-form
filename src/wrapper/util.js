@@ -1,6 +1,6 @@
 export function formatValue(value) {
   if ([null, undefined].indexOf(value) !== -1) return null
-  return value // 0 或 []直接返回
+  return value
 }
 
 export const curry = (fn, arity = fn.length, ...args) =>
