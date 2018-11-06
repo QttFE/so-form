@@ -1,0 +1,34 @@
+stages:
+  - coverage
+  - deploy
+
+coverage:
+  stage: coverage
+  coverage: '/Statements.*?(\d+(?:\.\d+)?)/'
+  only:
+    - master
+  script:
+    - npm cache clean --force
+    - rm -rf package-lock.json
+    - npm install
+    - npm run coverage
+    - ls
+  artifacts:
+    paths:
+      - coverage/
+
+pages:
+  stage: deploy
+  script:
+    - ls
+    - rm -rf public
+    - mkdir public
+    - ls
+    - mv coverage/lcov-report/* public/
+
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
