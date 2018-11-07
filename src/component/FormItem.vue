@@ -61,9 +61,7 @@ export default {
       ))}
       {
       // top 插槽
-        attrs.top && (
-          <div>{context2Jsx(h, attrs.top)}</div>
-        )
+        attrs.top && (context2Jsx(h, attrs.top))
       }
       {/* main */}
       <div class="formm-wrapped_flex">
@@ -78,9 +76,7 @@ export default {
 
       {
         // bottom 插槽
-        attrs.bottom && (
-          <div>{context2Jsx(h, attrs.bottom)}</div>
-        )
+        attrs.bottom && (context2Jsx(h, attrs.bottom))
       }
     </this.$formmWrapped.ele.FormItem>
     )
@@ -91,6 +87,7 @@ export default {
       this.statusEmitter.core.emit('init', {[this.$attrs.name]: 'edit'})
       this.statusEmitter.core.on('update', (obj) => {
         if (!obj) return
+
         if (obj.name === this.$attrs.name && this.status !== obj.status) {
           this.status = obj.status
           this.$forceUpdate()

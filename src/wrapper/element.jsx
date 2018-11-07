@@ -51,6 +51,7 @@ class WrapperClass {
 
   Textarea = (h, props, vm) => {
     const { status } = props
+    props.props.type = 'textarea'
 
     if (status === 'preview') return renderValue(h, formatValue(props.props.value)) // 处理预览态
 
@@ -238,7 +239,13 @@ class WrapperClass {
     }
 
     return (
-      <this.ele.Upload {...props}></this.ele.Upload>
+      <this.ele.Upload {...props}>
+        {props.props.slots && Object.keys(props.props.slots).map(slot => (
+          <div>
+            {props.props.slots[slot](h)}
+          </div>
+        ))}
+      </this.ele.Upload>
     )
   }
 

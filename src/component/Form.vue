@@ -21,6 +21,7 @@ export default {
     },
     setGlobalStatus (status = 'edit') {
       let statusCenter = this.statusCenter
+
       Object.keys(statusCenter).forEach(key => {
         statusCenter[key] = status
         this.statusEmitter.core.emit('update', { name : key, status })
