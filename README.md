@@ -124,31 +124,30 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 通过`ref`获取`form`实例
 
 ### 状态枚举
-NoForm 认为表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态)
+表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态) `ps: disabled 还未支持`
 
-
-### getGlobalStatus
+### getGlobalStatus()
 获取form表单内的组件状态
 
 ```js
   this.$refs.xxxx.getGlobalStatus(); // get global status
 ```
 
-### setGlobalStatus
+### setGlobalStatus(status)
 设置form表单全局状态
 
 ```js
   this.$refs.xxxx.setGlobalStatus('edit'); // set up global status
 ```
 
-### getStatus
+### getStatus(name)
 获取单个组件状态
 
 ```js
 this.$refs.xxxx.getStatus('username'); // get single item's status
 ```
 
-### setStatus
+### setStatus(name, status)
 设置单个组件状态
 
 ```js
