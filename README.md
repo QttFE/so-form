@@ -206,11 +206,11 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 ## todo
 
 - [x] label可render
-- [x] `<if>`逻辑组件
-- [x] `<FormColumns>` 组件
+- [x] `<if>`逻辑组件
+- [x] `<FormRows>` 组件
 - [x] `option`组件支持传参
-- [x] 全局切换`edit`/`preview`状态
-- [x] `formItem` 支持 `prefix` 等插槽
+- [x] 全局切换`edit`/`preview`状态
+- [x] `formItem` 支持 `prefix` 等插槽
 - [x] `when`/` 参数 可以控制`<formitem>`渲染
 - [x] 注册自定义form组件
 - [ ] 过滤不需要的`props`
@@ -227,7 +227,7 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 
 *2018-11-05*
 
-- 添加 全局切换`edit`/`preview`状态 功能
+- 添加全局切换`edit`/`preview`状态功能
 
 ## issue 🤔
 
