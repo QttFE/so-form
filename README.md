@@ -103,6 +103,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 | props                | Object   | {} |  传递实际功能组件的参数列表    |     |
 | formItemProps        | Object   | {} |  传递给 element form-item 组件的参数列表    |  {}   |
 | slots                | Object   | {} |  传给 `element form-item` 的slot（ps：参数 h 必填）    |  `{ label: (h) =>  (<span>text label</spa>) }`  |
+| when                | `boolean` or `function`   | {} |  控制form-item是否渲染    |  `true` or  `() => true` |
 | top        | string 或 function   | '' 或 (h) => {}  |  设置formItem上面的插槽（如下图）   | 'top' 或者 `(h) => <span>top</span>`   |
 | prefix        | string 或 function   | '' 或 (h) => {}  |  设置formItem左边的插槽（如下图）   | 'prefix' 或者 `(h) => <span>prefix</span>`   |
 | suffix        | string 或 function   | '' 或 (h) => {}  |  设置formItem右边的插槽（如下图）   | 'suffix' 或者 `(h) => <span>suffix</span>`   |
@@ -220,6 +221,7 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 *2018-11-07*
 
 - 支持注册自定义form组件
+- add when props
 
 *2018-11-05*
 
