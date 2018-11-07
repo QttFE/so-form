@@ -8,6 +8,7 @@
     <button @click="setStatusEdit">status edit</button>
     <button @click="reset">reset</button>
     <button @click="validate">validate</button>
+    <button @click="when = !when">when</button>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 export default {
   name: 'app',
   data: () => ({
+    when: true,
     model: {
       job: '',
       job1: '',
@@ -34,8 +36,12 @@ export default {
   computed: {
     columns (h) {
       return [
-        // { label: '任务名称', name: 'job', type: 'input', top: (h) => (<span>'top'</span>), suffix: 'suffix'},
-        { label: '任务名称', name: 'job', type: 'input'},
+        { label: '任务名称', name: 'job', type: 'input', top: (h) => (<span>'top'</span>), suffix: 'suffix'},
+        // { label: '任务名称', name: 'job', type: 'input', when: this.when},
+        { label: '任务名称', name: 'textarea', type: 'textarea' },
+        { label: 'tree', name: 'tree', type: 'tree', props: {data: []} },
+        { label: 'upload', name: 'upload', type: 'upload', props: {action: 'https://jsonplaceholder.typicode.com/posts/', slots: {default: (h) => <button>123</button> }} },
+        { label: 'cascader', name: 'cascader', type: 'cascader', props: {options: []} },
         { label: 'test', name: 'test', type: 'test'},
         { label: 'datepicker', name: 'job1', type: 'InputNumber'},
         { label: '短信内容', name: 'msg', type: 'textarea', on: {}},

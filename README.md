@@ -213,12 +213,8 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 - [x] `formItem` 支持 `prefix` 等插槽
 - [x] `when`/` 参数 可以控制`<formitem>`渲染
 - [x] 注册自定义form组件
-- [ ] 过滤不需要的`props`
-- [ ] 优化状态联动
 - [ ] 支持iview
-- [ ] 完善错误提示
 - [ ] 完善文档
-
 
 ## changelog
 *2018-11-07*
