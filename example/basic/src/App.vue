@@ -36,6 +36,7 @@ export default {
       return [
         // { label: '任务名称', name: 'job', type: 'input', top: (h) => (<span>'top'</span>), suffix: 'suffix'},
         { label: '任务名称', name: 'job', type: 'input'},
+        { label: 'test', name: 'test', type: 'test'},
         { label: 'datepicker', name: 'job1', type: 'InputNumber'},
         { label: '短信内容', name: 'msg', type: 'textarea', on: {}},
         { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是', border: true, on: {change: (e) => {

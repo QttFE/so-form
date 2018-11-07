@@ -7,7 +7,7 @@ const install = function(Vue, opts = {}) {
   let wrappedComponent = wrapperElement(opts.source)
   Vue.prototype.$formmWrapped = {
     ...wrappedComponent,
-    ...(opts.component || {})
+    ...(opts.components || {})
   }
 
   Vue.component('iForm', iForm)
