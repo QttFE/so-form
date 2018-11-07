@@ -123,6 +123,37 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 
 通过`ref`获取`form`实例
 
+## 注册自定义组件
+
+> 双向数据绑定跟preview状态都需要自助实现，可以参考源码
+
+注册全局form组件
+
+```js
+// props 表示组件的props
+// vm 表示 vue实例（擢用等同于vue的this）
+function custom (h, props, vm) {
+  return <div>custom global component</div>
+}
+
+Vue.use(qform, {
+  source: Element,
+  components: {
+    test: custom
+  }
+})
+```
+
+使用自定义form组件
+
+```js
+  computed: {
+    columns (h) {
+      return [{ label: 'test', name: 'test', type: 'test'}] // 如果没有实现双向数据绑定，name可以省略
+    }
+```
+
+
 ### 状态枚举
 表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态) `ps: disabled 还未支持`
 
@@ -181,6 +212,7 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 - [x] 全局切换`edit`/`preview`状态
 - [x] `formItem` 支持 `prefix` 等插槽
 - [x] `when`/` 参数 可以控制`<formitem>`渲染
+- [x] 注册自定义form组件
 - [ ] 过滤不需要的`props`
 - [ ] 优化状态联动
 - [ ] 支持iview
@@ -189,10 +221,13 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 
 
 ## changelog
+*2018-11-07*
+
+- 支持注册自定义form组件
 
 *2018-11-05*
 
-添加 全局切换`edit`/`preview`状态 功能
+- 添加 全局切换`edit`/`preview`状态 功能
 
 ## issue 🤔
 
