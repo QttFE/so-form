@@ -156,7 +156,7 @@ Vue.use(qform, {
 
 
 ### 状态枚举
-表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态) `ps: disabled 还未支持`
+表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态)
 
 ### getGlobalStatus()
 获取form表单内的组件状态
