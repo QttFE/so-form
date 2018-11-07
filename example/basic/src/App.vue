@@ -6,6 +6,7 @@
     </iForm>
     <button @click="setStatus">status preview</button>
     <button @click="setStatusEdit">status edit</button>
+    <button @click="setStatusDisabled">status disabled</button>
     <button @click="reset">reset</button>
     <button @click="validate">validate</button>
     <button @click="when = !when">when</button>
@@ -46,7 +47,7 @@ export default {
         { label: 'datepicker', name: 'job1', type: 'InputNumber'},
         { label: '短信内容', name: 'msg', type: 'textarea', on: {}},
         { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是', border: true, on: {change: (e) => {
-          console.log(e, 123)
+          this.ttt()
         }}}]},
         { label: '是否昵称短信', name: 'isNickMsg1', type: 'checkbox', options: [{value: 1, name: 'a'}, {value: 2, name:'b'}] , on: {}},
         { label: '昵称短信内容', name: 'nickname', type: 'input', on: {}, props: {
@@ -70,6 +71,9 @@ export default {
     },
     setStatusEdit () {
       this.$refs.ruleForm.setGlobalStatus('edit')
+    },
+    setStatusDisabled () {
+      this.$refs.ruleForm.setGlobalStatus('disabled')
     },
     ttt (e) {
       this.model.slider = 20

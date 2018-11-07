@@ -20,6 +20,9 @@ export default {
     props.props = props.props || {}
     props.on = props.on || {}
     props.status = this.status || 'edit'
+    if (props.status === 'disabled') {
+      props.props.disabled = true
+    }
 
     let attrs = {
       ...props,
