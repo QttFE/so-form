@@ -139,7 +139,6 @@ class WrapperClass {
   }
 
   Switch (h, props, vm) {
-
     if (props.status === 'preview') return renderValue(h, props.props.value)
 
     return (
@@ -148,10 +147,7 @@ class WrapperClass {
   }
 
   Slider (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.Slider {...(props)}></this.ele.Slider>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.Slider {...props}></this.ele.Slider>
@@ -159,10 +155,7 @@ class WrapperClass {
   }
 
   DatePicker (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.DatePicker {...props}></this.ele.DatePicker>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.DatePicker {...props}></this.ele.DatePicker>
@@ -170,10 +163,7 @@ class WrapperClass {
   }
 
   TimeSelect (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.TimeSelect {...props}></this.ele.TimeSelect>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.TimeSelect {...props}></this.ele.TimeSelect>
@@ -181,10 +171,7 @@ class WrapperClass {
   }
 
   TimePicker (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.TimePicker {...props}></this.ele.TimePicker>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.TimePicker {...props}></this.ele.TimePicker>
@@ -200,10 +187,7 @@ class WrapperClass {
   }
 
   Rate (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.Rate {...props}></this.ele.Rate>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.Rate {...props}></this.ele.Rate>
@@ -211,10 +195,7 @@ class WrapperClass {
   }
 
   Cascader (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.Cascader {...props}></this.ele.Cascader>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.Cascader {...props}></this.ele.Cascader>
@@ -222,10 +203,7 @@ class WrapperClass {
   }
 
   Tree (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.Tree {...props}></this.ele.Tree>
-    }
+    if (props.status === 'preview') props.props.disabled = true
 
     return (
       <this.ele.Tree {...props}></this.ele.Tree>
@@ -233,10 +211,8 @@ class WrapperClass {
   }
 
   Upload (h, props, vm) {
-    if (props.status === 'preview') {
-      props.props.disabled = true
-      return <this.ele.Upload {...props}></this.ele.Upload>
-    }
+    if (props.status === 'preview') props.props.disabled = true
+
 
     return (
       <this.ele.Upload {...props}>
