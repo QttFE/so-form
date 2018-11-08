@@ -1,6 +1,6 @@
 <template>
 <div>
-  <iFormItem v-for="(col, index) in rows" v-bind="col" :key="index"></iFormItem>
+  <FormItem v-for="(col, index) in rows" v-bind="col" :key="index"></FormItem>
 </div>
 </template>
 
@@ -13,6 +13,9 @@ export default {
       required: true,
       type: Array
     }
+  },
+  components: {
+    FormItem
   }
 }
 </script>
