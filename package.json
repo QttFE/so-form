@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/q-form.min.js",
   "scripts": {
+    "docs:dev": "vuepress dev docs",
     "build": "webpack --mode production",
     "prepublish": "npm run build",
     "test": "jest",
@@ -35,6 +36,7 @@
     "jest": "^23.6.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
+    "viewcode": "^0.0.27",
     "vue-jest": "^3.0.0",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",

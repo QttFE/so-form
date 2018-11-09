@@ -1,4 +1,4 @@
-<script lang="jsx">
+<script>
 import {parsePath, checkWhen, deepCopy} from '../wrapper/util'
 import set from 'set-object-path'
 
@@ -16,7 +16,7 @@ export default {
     status: 'edit'
   }),
   render(h) {
-    let props = this.$attrs || {}
+    let props = deepCopy(this.$attrs) || {}
     props.props = props.props || {}
     props.on = props.on || {}
     props.status = this.status || 'edit'

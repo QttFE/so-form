@@ -1,4 +1,4 @@
-import wrapperElement from './wrapper/element.jsx'
+import wrapperElement from './wrapper/element.js'
 import iFormItem from './component/FormItem.vue'
 import iForm from './component/Form.vue'
 import iFormRows from './component/FormRows.vue'

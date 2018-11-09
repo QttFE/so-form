@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+}
+
+.con-box .box {
+  box-shadow: 0 1px 45px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.con-vuecode {
+  margin-top: 0;
+  padding: 0;
+}
+.shadow-vc .con-demo {
+  margin: 0!important;
+  width: 100%!important;
+}
+.con-vuecode .con-demo .demo {
+  padding: 15px 20px !important;
+}
+
+.content-vc pre, .content-vc pre[class*=language-] {
+  white-space: pre;
+}
+
+.content:not(.custom) > h1, .content:not(.custom) > h2, .content:not(.custom) > h3, .content:not(.custom) > h4, .content:not(.custom) > h5, .content:not(.custom) > h6 {
+  margin-bottom: 16px;
+}
