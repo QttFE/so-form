@@ -3,6 +3,8 @@
     <iFormRows :rows="rows"></iFormRows>
       <el-button @click="validate">validate</el-button>
       <el-button @click="reset">reset</el-button>
+      <el-button @click="validateField('job')">validateField</el-button>
+      <el-button @click="clearValidate">clearValidate	</el-button>
   </iForm>
 </template>
 
@@ -45,6 +47,12 @@ export default {
     },
     validate () {
       this.$refs.ruleForm.validate()
+    },
+    clearValidate	 () {
+      this.$refs.ruleForm.clearValidate	()
+    },
+    validateField (name) {
+      this.$refs.ruleForm.validateField(name)
     }
   }
 }

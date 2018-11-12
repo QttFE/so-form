@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+body, html {
+  height: 100%;
+}
+
 .con-box .box {
   box-shadow: 0 1px 45px -5px rgba(0, 0, 0, 0.1) !important;
 }
@@ -10,6 +14,10 @@
   margin-top: 0;
   padding: 0;
 }
+.content ul {
+  margin-top: 0;
+}
+
 .shadow-vc .con-demo {
   margin: 0!important;
   width: 100%!important;
@@ -24,4 +32,53 @@
 
 .content:not(.custom) > h1, .content:not(.custom) > h2, .content:not(.custom) > h3, .content:not(.custom) > h4, .content:not(.custom) > h5, .content:not(.custom) > h6 {
   margin-bottom: 16px;
+}
+
+.content:not(.custom) {
+  max-width: 800px;
+}
+
+.tag:not(body) {
+    align-items: center;
+    background-color: transparent!important;
+    border-radius: 4px;
+    color: #4a4a4a;
+    display: inline-flex;
+    font-size: 14px;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    height: 1.5em;
+}
+
+.content pre code {
+  font-size: 14px;
+}
+
+.hero-image {
+    height: auto;
+}
+
+.has-text-centered a{
+  border-radius: 28px;
+  width: 150px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  color: #fff;
+  background: #4990E2;
+  cursor: pointer;
+  border: 0;
+  font-size: 16px!important;
+  transition: all .4s;
+}
+
+.has-text-centered a:hover {
+  box-shadow: 0 9px 28px -9px #4990E2;
+  color: #fff;
+}
+
+.home .hero h1 {
+  color: #333;
+  font-size: 40px;
 }

@@ -18,7 +18,7 @@ Vue.use(qform, {
 ```html
 <!-- model 为表单数据中心，iFormItem 通用的vue表单会自动数据绑定 -->
 <iForm :model="model">
-  <iFormRows :rows="rows"></iFormRows>
+  <iFormRows :rows="rows"/>
 </iForm>
 
 ```

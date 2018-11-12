@@ -23,13 +23,12 @@ ps: 组件双向数据绑定能力跟组件的各种状态都需要自行编写
     }
   })
 
-  function custom (h) {
+  function custom (h, props, vm) {
+    // 通过 vm.$emit('input')，提供双向数据绑定的能力
+    // 具体原理可以看： https://cn.vuejs.org/v2/guide/render-function.html#v-model
     return (
-    <div>
-      <div>这块区域是全局组件</div>
-      <input type="text"/>
-      <span>custom global component</span>
-    </div>)
+      <div><input type="text" onInput={(e) => vm.$emit('input', e.target.value)}  /></div>
+    )
   }
 
 ```
@@ -47,6 +46,7 @@ ps: 组件双向数据绑定能力跟组件的各种状态都需要自行编写
     name: 'app',
     data: () => ({
       model: {
+        job: ''
       }
     }),
     computed: {

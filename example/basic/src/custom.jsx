@@ -1,3 +1,3 @@
-export default (h) => {
-  return <div>custom global component</div>
+export default (h, props, vm) => {
+  return <div><input type="text" onInput={(e) => vm.$emit('input', e.target.value)}  /></div>
 }

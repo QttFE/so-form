@@ -30,11 +30,8 @@ export default ({
 }
 
 
-function custom (h) {
+function custom (h, props, vm) {
   return (
-  <div>
-    <div>这块区域是全局组件</div>
-    <input type="text"/>
-    <span>custom global component</span>
-  </div>)
+    <div><input type="text" onInput={(e) => vm.$emit('input', e.target.value)}  /></div>
+  )
 }

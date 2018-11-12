@@ -9,6 +9,10 @@
 - `tpye`参数，控制输出的表单类型
 - `name`参数，自动跟在`<iForm>` 的`model`的数据源进行双向绑定，所以你在只需要关系数据层就好
 
+::: tip
+ps: name支持嵌套，例如'inner.job'，如下示例)
+:::
+
 <box>
   <vuecode md>
     <div slot="demo">
@@ -24,37 +28,31 @@
 </template>
 
 <script>
-  export default {
-    name: 'app',
-    data: () => ({
-      model: {
-        job: '',
-        isNickMsg: 1,
-        package: []
-      }
-    }),
-    // 注：推荐把columns写在computed内
-    computed: {
-      rows(h) {
-        return [
-          { label: '任务名称', name: 'job', type: 'input' },
-          {
-            label: '是否昵称短信',
-            name: 'isNickMsg',
-            type: 'radio',
-            options: [{ value: 1, name: '否' }, { value: 2, name: '是' }]
-          },
-          {
-            label: '选择套餐',
-            name: 'package',
-            type: 'checkbox',
-            options: [{ value: 1, name: 'a' }, { value: 2, name: 'b' }]
-          }
-        ]
-      }
+export default {
+  name: 'app',
+  data: () => ({
+    model: {
+      job: '',
+      inner: {
+        job: ''
+      },
+      isNickMsg: 1,
+      package: []
+    }
+  }),
+  computed: {
+    rows (h) {
+      return [
+        { label: '任务名称', name: 'job', type: 'input' },
+        { label: '嵌套任务', name: 'inner.job', type: 'input' },
+        { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是'}]},
+        { label: '选择套餐', name: 'package', type: 'checkbox', options: [{value: 1, name: 'a'}, {value: 2, name:'b'}] },
+      ]
     }
   }
+}
 </script>
+
 ```
 
   </div>

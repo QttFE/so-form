@@ -1,3 +1,21 @@
+## iForm
+
+iForm 具有以下可配置的类型
+
+- `model`, 是整个form的数据中心，表单内的数据统一由model分发到各个form-item，并且自动双向数据绑定
+
+- [element-Form Attributes](http://element-cn.eleme.io/#/zh-CN/component/form#form-attributes)
+
+其实就是跟element form 的参数一致
+
+<box>
+  <vuecode md>
+    <div slot="demo">
+      <demos-basic></demos-basic>
+    </div>
+    <div slot="code">
+
+```html
 <template>
   <iForm label-width="100px" :model="model">
     <iFormRows :rows="rows"></iFormRows>
@@ -29,3 +47,9 @@ export default {
   }
 }
 </script>
+
+```
+
+  </div>
+  </vuecode>
+</box>

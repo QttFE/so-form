@@ -55,7 +55,7 @@ export default {
 
 通过`prefix`, `suffix`, `top`, `bottom`, 参数来控制（类型`boolean` or `function`）
 
-![好用的](../../static/prefix.png)
+![好用的](../../../static/prefix.png)
 
 <box>
   <vuecode md>

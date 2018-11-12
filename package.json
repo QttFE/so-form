@@ -5,6 +5,7 @@
   "main": "dist/q-form.min.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "build": "webpack --mode production",
     "prepublish": "npm run build",
     "test": "jest",
@@ -34,7 +35,9 @@
     "element-ui": "^2.4.9",
     "extract-text-webpack-plugin": "^3.0.2",
     "jest": "^23.6.0",
+    "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "viewcode": "^0.0.27",
     "vue-jest": "^3.0.0",

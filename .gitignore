@@ -22,3 +22,7 @@ yarn.lock
 *.njsproj
 *.sln
 *.sw*
+
+#docs
+
+/docs/.vuepress/dist/*
