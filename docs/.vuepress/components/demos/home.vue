@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="logo">
-    <img src="/logo.png">
+    <img :src="$withBase('/logo.png')" alt="foo">
   </div>
 
   <div class="enter">

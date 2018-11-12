@@ -1,5 +1,6 @@
 module.exports = {
   title: 'q-form',
+  base: '/ci/npm/q-form/docs/',
   description: '也许是vue最好用的表单组件',
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
