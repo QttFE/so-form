@@ -13,7 +13,7 @@ module.exports = {
     nav: [
       { icon: 'fa fa-home fa-lg', iconClass: 'is-medium', text: '首页', link: '/' },
       { icon: 'fa fa-book fa-lg', iconClass: 'is-medium', text: '文档', link: '/docs/' },
-      { icon: 'fab fa-lg fa-github', iconClass: 'is-medium', text: 'gitlab', link: 'https://github.com/ws456999/so-form' },
+      { icon: 'fab fa-lg fa-github', iconClass: 'is-medium', text: 'github', link: 'https://github.com/ws456999/so-form' },
     ],
     sidebar: [
       {
