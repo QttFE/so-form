@@ -86,3 +86,15 @@ body, html {
 .token.attr-name {
   padding-left: 0.75em;
 }
+
+
+.flaticon2-code-vc {
+  color: #4990E2!important;
+  display: flex;
+  align-items: center;
+}
+.flaticon2-code-vc:after {
+  content: 'code';
+  font-size: 14px;
+  padding-left: 4px;
+}
