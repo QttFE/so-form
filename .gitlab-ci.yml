@@ -24,6 +24,7 @@ docs:
   only:
     - master
   script:
+    - npm install
     - npm run docs:build
     - ls
     - mkdir -p ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
