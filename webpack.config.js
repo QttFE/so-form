@@ -7,8 +7,8 @@ module.exports = {
   entry: './src/install.js',
   output: {
     path: path.resolve(__dirname, './dist/'),
-    filename: 'q-form.min.js',
-    library: 'q-form',
+    filename: 'so-form.min.js',
+    library: 'so-form',
     libraryTarget: 'umd',
   },
   resolve: {

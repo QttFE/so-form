@@ -1,11 +1,11 @@
 <p align="center" style="text-align: center;"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
-<h2 style="text-align: center;" align="center">v-form 📰</h2>
+<h2 style="text-align: center;" align="center">so-form 📰</h2>
 <p align="center" style="text-align: center;">渐进式通用vue表单</p>
 
 ## Introduction
 
-- v-form 是一个自动双向数据绑定，可拓展，提供 `json-schema` 自动渲染出对应表单组件`vue`插件
-- v-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置插件
+- so-form 是一个自动双向数据绑定，可拓展，提供 `json-schema` 自动渲染出对应表单组件`vue`插件
+- so-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置插件
 
 ## feature
 
@@ -33,7 +33,7 @@
   "plugins": ["transform-vue-jsx"]
 
   # 引入
-  npm i v-form --save
+  npm i so-form --save
 
 ```
 
