@@ -1,20 +1,29 @@
-# q-form 📰
 
 > 渐进式通用vue表单
+
+<p align="center"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
+<h2 align="center">q-form 📰</h2>
 
 [![pipeline status](https://git.qutoutiao.net/npm/q-form/badges/master/pipeline.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)[![coverage report](https://git.qutoutiao.net/npm/q-form/badges/master/coverage.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)
 
 ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v2/guide/render-function.html)
 
 ---
+## Introduction
+q-form是一个自动双向数据绑定，可拓展，提供json-schema自动渲染出对应表单组件的一个插件
 
 ## feature
-- json-schema to form
+- json-schema 2 form
 - 自动双向数据绑定
 - 表单支持自定义render（[jsx写法](https://cn.vuejs.org/v2/guide/render-function.html#JSX)）
 - 支持拓展components
 - 各种方便插槽
 - 全局切换`edit`/`preview`状态
+- 支持`element-ui`
+
+## Links
+
+- 📘 [Documentation](http://qtt-frontend-gerrit.qutoutiao.net/ci/npm/q-form/docs/index.html)
 
 ## example
 
@@ -84,108 +93,6 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
   },
 ```
 
-## Api
-### iForm props
-
-| Name                 | Type      | Default      | Description                   | example                             |
-|----------------------|-----------|--------------|-------------------------------|-------------------------------------|
-| model            | Object  | {} | 表单数据对象，form-item的数据来源         |  `{ name: '123', age: 18 }` |
-|其他参数详见[`element form组件`](http://element-cn.eleme.io/#/zh-CN/component/form#form-attributes)，使用方式一致 |
-
-
-### iFormItem props
-| Name                 | Type       | Default      | Description               |   example                           |
-|----------------------|------------|--------------|---------------------------|-------------------------------------|
-| label                | string   | '' | 表单标签名称 | `姓名` |
-| name                 | string   |   | 会去`<iForm>`的model对象里找到值进行双向绑定（支持多级路径，如'obj.a.b'或'obj.0.b'） | 'name' 或 'obj.name'  |
-| type                 | string   | '' | 具体渲染的表单类型, 目前支持element常用的全部组件，若不支持可在企业微信找`王瑞`（ps: 全小写） |  'input'    |
-| render               | function |  | 若`type`的类型为 `custom`, (组件中涉及到的`render`全为`jsx`写法) | `(h) => <span>这个一个测试render</span>` |
-| props                | Object   | {} |  传递实际功能组件的参数列表    |     |
-| formItemProps        | Object   | {} |  传递给 element form-item 组件的参数列表    |  {}   |
-| slots                | Object   | {} |  传给 `element form-item` 的slot（ps：参数 h 必填）    |  `{ label: (h) =>  (<span>text label</spa>) }`  |
-| when                | `boolean` or `function`   | {} |  控制form-item是否渲染    |  `true` or  `() => true` |
-| top        | string 或 function   | '' 或 (h) => {}  |  设置formItem上面的插槽（如下图）   | 'top' 或者 `(h) => <span>top</span>`   |
-| prefix        | string 或 function   | '' 或 (h) => {}  |  设置formItem左边的插槽（如下图）   | 'prefix' 或者 `(h) => <span>prefix</span>`   |
-| suffix        | string 或 function   | '' 或 (h) => {}  |  设置formItem右边的插槽（如下图）   | 'suffix' 或者 `(h) => <span>suffix</span>`   |
-| bottom        | string 或 function   | '' 或 (h) => {}  |  设置formItem下面的插槽（如下图）   | 'bottom' 或者 `(h) => <span>bottom</span>`   |
-| | | |  比如 vue 事件 或者 指令 的使用参数 [详见 vue jsx 写法](https://cn.vuejs.org/v2/guide/render-function.html#%E6%B7%B1%E5%85%A5-data-%E5%AF%B9%E8%B1%A1)，写法一致, 比如`@change`事件， 会变成参数 `on: { change: () => {}`，诸如此类 }  |
-
-![form-item](https://git.qutoutiao.net/npm/q-form/raw/master/static/prefix.png)
-
-## 联动
-
-这部分，主要在组件的回调，比如 `on: { click: () => this.model.testName = '测试' }`，联动修改其他model层数据
-
-## 校验
-
-用法，参数位置，参数都跟 `ELEMENT` 一致
-
-## 状态
-
-通过`ref`获取`form`实例
-
-## 注册自定义组件
-
-> 双向数据绑定跟preview状态都需要自助实现，可以参考源码
-
-注册全局form组件
-
-```js
-// props 表示组件的props
-// vm 表示 vue实例（擢用等同于vue的this）
-function custom (h, props, vm) {
-  return <div>custom global component</div>
-}
-
-Vue.use(qform, {
-  source: Element,
-  components: {
-    test: custom
-  }
-})
-```
-
-使用自定义form组件
-
-```js
-  computed: {
-    columns (h) {
-      return [{ label: 'test', name: 'test', type: 'test'}] // 如果没有实现双向数据绑定，name可以省略
-    }
-```
-
-
-### 状态枚举
-表单状态分为以下三种类型：edit(编辑态), preview(预览态), disabled(禁用态)
-
-### getGlobalStatus()
-获取form表单内的组件状态
-
-```js
-  this.$refs.xxxx.getGlobalStatus(); // get global status
-```
-
-### setGlobalStatus(status)
-设置form表单全局状态
-
-```js
-  this.$refs.xxxx.setGlobalStatus('edit'); // set up global status
-```
-
-### getStatus(name)
-获取单个组件状态
-
-```js
-this.$refs.xxxx.getStatus('username'); // get single item's status
-```
-
-### setStatus(name, status)
-设置单个组件状态
-
-```js
-this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
-```
-
 ## 组件
 - custom(自己写render)
 - input
@@ -207,19 +114,20 @@ this.$refs.xxxx.setStatus('username', 'edit'); // modify single item's status
 ## todo
 
 - [x] label可render
-- [x] `<if>`逻辑组件
 - [x] `<FormRows>` 组件
 - [x] `option`组件支持传参
 - [x] 全局切换`edit`/`preview`状态
 - [x] `formItem` 支持 `prefix` 等插槽
 - [x] `when`/` 参数 可以控制`<formitem>`渲染
 - [x] 注册自定义form组件
+- [x] 完善文档
 - [ ] 支持iview
-- [ ] 完善文档
 
 ## changelog
-*2018-11-07*
+*2018-11-12*
+- 提供文档
 
+*2018-11-07*
 - 支持注册自定义form组件
 - add when props
 
