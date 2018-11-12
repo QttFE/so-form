@@ -13,7 +13,7 @@ coverage:
     - npm run coverage
     - ls
     - mkdir -p ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/
-    - mv coverage/lcov-report/*/ ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/ -f
+    - cp -rf coverage/lcov-report/*/ ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/ -f
     - ls ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/
   artifacts:
     paths:
@@ -27,5 +27,5 @@ docs:
     - npm run docs:build
     - ls
     - mkdir -p ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
-    - mv docs/.vuepress/dist/* ${EE_REPORT}/${CI_PROJECT_PATH}/docs/ -f
+    - cp -rf docs/.vuepress/dist/* ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
     - ls ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
