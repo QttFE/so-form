@@ -11,12 +11,6 @@
 - q-form 是一个自动双向数据绑定，可拓展，提供 json-schema 自动渲染出对应表单组件的一个插件
 - q-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置问题
 
-|  编写表单的流程从                  |
-| ---------------------------------- |
-| (`html` + `script`) -> 表单        |
-| ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️               |
-| `json配置` -> `q-form` -> `表单`， |
-
 ## feature
 
 - json-schema 2 form
@@ -64,7 +58,9 @@
 
 ```html
 <!-- model 为表单数据中心，iFormItem 通用的vue表单会自动数据绑定 -->
-<iForm :model="model"> <iFormRows :rows="rows"></iFormRows> </iForm>
+<iForm :model="model">
+  <iFormRows :rows="rows"></iFormRows>
+</iForm>
 ```
 
 ```js
