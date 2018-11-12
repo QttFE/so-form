@@ -17,12 +17,6 @@
 - 全局切换`edit`/`preview`状态
 - 支持`element-ui`，后续会支持iview等ui框架
 
-## example gif
-
-例如下图，通过左边的简单配置，就可以生成右边表单。
-
-![example](./static/basic.gif)
-
 ## install
 
 ```shell
@@ -40,6 +34,12 @@
 ## usage
 - 📘 [中文文档](https://ws456999.github.io/so-form/)
 
+
+## example gif
+
+例如下图，通过左边的简单配置，就可以生成右边表单。
+
+![example](./static/basic.gif)
 
 ## 组件
 
