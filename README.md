@@ -19,10 +19,6 @@
 - 全局切换`edit`/`preview`状态
 - 支持`element-ui`，后续会支持iview等ui框架
 
-## Links
-
-- 📘 [Documentation](http://qtt-frontend-gerrit.qutoutiao.net/ci/npm/q-form/docs/index.html)
-
 ## example gif
 
 例如下图，通过左边的简单配置，就可以生成右边表单。
@@ -35,7 +31,7 @@
   npm i babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx --save-dev
 
   # 在.babelrc文件中加入
-    "plugins": ["transform-vue-jsx"]
+  "plugins": ["transform-vue-jsx"]
 
   # 引入
   npm i @qtt/q-form --save
@@ -43,47 +39,8 @@
 ```
 
 ## usage
+- 📘 [中文文档](http://qtt-frontend-gerrit.qutoutiao.net/ci/npm/q-form/docs/index.html)
 
-```
-  import qform from '@qtt/q-form'
-
-  Vue.use(Element)
-  Vue.use(qform, {
-    source: Element,
-  })
-
-```
-
-```html
-<!-- model 为表单数据中心，iFormItem 通用的vue表单会自动数据绑定 -->
-<iForm :model="model">
-  <iFormRows :rows="rows"></iFormRows>
-</iForm>
-```
-
-```js
-  // 注意，需要把columns写在computed内部（若卸载data后续会有context问题）
-  computed: {
-    rows (h) {
-      return [
-        { label: '任务名称', name: 'job', type: 'input'},
-        { label: '短信内容', name: 'msg', type: 'input', on: {}, props: {
-            type: 'textarea'
-        }},
-        { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是'}] , on: {}},
-        { label: '昵称短信内容', name: 'nickname', type: 'input', on: {}, props: {
-            type: 'textarea'
-        }},
-        { label: '落地页个性化', name: 'land', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是'}] , on: {}},
-        { label: 'cu', name: 'custom', type: 'custom', render (h) {
-          return (
-            <span>自定义内容</span>
-          )
-        }}
-      ]
-    }
-  },
-```
 
 ## 组件
 
@@ -106,14 +63,6 @@
 
 ## todo
 
-- [x] label 可 render
-- [x] `<FormRows>` 组件
-- [x] `option`组件支持传参
-- [x] 全局切换`edit`/`preview`状态
-- [x] `formItem` 支持 `prefix` 等插槽
-- [x] `when`/`参数 可以控制`<formitem>`渲染
-- [x] 注册自定义 form 组件
-- [x] 完善文档
 - [ ] 支持 iview
 
 ## changelog
