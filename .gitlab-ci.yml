@@ -1,6 +1,6 @@
 stages:
   - coverage
-  - deploy
+  - docs
 
 coverage:
   stage: coverage
@@ -8,27 +8,24 @@ coverage:
   only:
     - master
   script:
-    - npm cache clean --force
     - rm -rf package-lock.json
     - npm install
     - npm run coverage
     - ls
+    - mkdir -p ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/
+    - mv coverage/lcov-report/* ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/
+    - ls ${EE_REPORT}/${CI_PROJECT_PATH}/coverage/
   artifacts:
     paths:
       - coverage/
 
-pages:
-  stage: deploy
-  script:
-    - ls
-    - rm -rf public
-    - mkdir public
-    - ls
-    - mv coverage/lcov-report/* public/
-
-  artifacts:
-    paths:
-      - public
-    expire_in: 30 days
+docs:
+  stage: docs
   only:
     - master
+  script:
+    - npm run docs:build
+    - ls
+    - mkdir -p ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
+    - mv docs/.vuepress/dist/* ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
+    - ls ${EE_REPORT}/${CI_PROJECT_PATH}/docs/
