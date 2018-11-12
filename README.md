@@ -1,12 +1,10 @@
 
-> 渐进式通用vue表单
 
-<p align="center"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
-<h2 align="center">q-form 📰</h2>
+<p align="center" style="text-align: center;"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
+<h2 style="text-align: center;" align="center">q-form 📰</h2>
+<p align="center" style="text-align: center;">渐进式通用vue表单</p>
 
 [![pipeline status](https://git.qutoutiao.net/npm/q-form/badges/master/pipeline.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)[![coverage report](https://git.qutoutiao.net/npm/q-form/badges/master/coverage.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)
-
-ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v2/guide/render-function.html)
 
 ---
 ## Introduction
@@ -25,15 +23,7 @@ ps: 组件涉及`jsx`操作， 可以[点击这里学习](https://cn.vuejs.org/v
 
 - 📘 [Documentation](http://qtt-frontend-gerrit.qutoutiao.net/ci/npm/q-form/docs/index.html)
 
-## example
-
-[基础用法](./example/basic/src/App.vue)
-
----
-
 例如下图，通过左边的简单配置，就可以生成右边表单。
-
-![example](https://git.qutoutiao.net/npm/q-form/raw/master/static/basic.gif)
 
 ## install
 
