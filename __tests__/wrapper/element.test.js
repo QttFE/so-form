@@ -1,4 +1,4 @@
-import wrapperElement from '../../src/wrapper/element.jsx'
+import wrapperElement from '../../src/wrapper/element.js'
 import Element from 'element-ui'
 
 describe('element ui wrapper', () => {
