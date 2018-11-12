@@ -1,11 +1,11 @@
 ## 快速开始
 
-> q-form 初衷就是通过对第三方组件进行二次封装，减轻写form的痛苦
+> so-form 初衷就是通过对第三方组件进行二次封装，减轻写form的痛苦
 
-**使用q-form插件**
+**使用so-form插件**
 全局注册 `iForm` `iFormRows` `iFormItem` 组件
 ```js
-import qform from '@qtt/q-form'
+import qform from 'so-form'
 
 Vue.use(Element)
 Vue.use(qform, {

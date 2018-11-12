@@ -1,6 +1,6 @@
 ## iFormItem
 
-iFormItem简单来说就是将组件库的form-item 与 具体渲染组件 组合起来的复合组件，所以q-form就会一些组件传参的约定
+iFormItem简单来说就是将组件库的form-item 与 具体渲染组件 组合起来的复合组件，所以so-form就会一些组件传参的约定
 
 <box>
   <vuecode md>

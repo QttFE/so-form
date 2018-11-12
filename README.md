@@ -38,7 +38,7 @@
 ```
 
 ## usage
-- 📘 [中文文档](http://qtt-frontend-gerrit.qutoutiao.net/ci/npm/q-form/docs/index.html)
+- 📘 [中文文档](https://ws456999.github.io/so-form/)
 
 
 ## 组件

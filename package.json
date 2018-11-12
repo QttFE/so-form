@@ -7,6 +7,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "webpack --mode production",
+    "deploy": "sh ./deploy.sh",
     "prepublish": "npm run build",
     "test": "jest",
     "coverage": "jest --coverage"

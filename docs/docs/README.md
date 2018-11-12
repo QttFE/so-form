@@ -14,11 +14,11 @@ npm i babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx --save-dev
 **使用 npm 的安装**
 
 ```shell
-npm i @qtt/q-form -S
+npm i so-form -S
 ```
 
 **使用 yarn 的安装**
 
 ```shell
-yarn add @qtt/q-form
+yarn add so-form
 ```

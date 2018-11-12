@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'q-form',
-  base: '/ci/npm/q-form/docs/',
+  title: 'so-form',
+  base: '/so-form/',
   description: '也许是vue最好用的表单组件',
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
@@ -13,7 +13,7 @@ module.exports = {
     nav: [
       { icon: 'fa fa-home fa-lg', iconClass: 'is-medium', text: '首页', link: '/' },
       { icon: 'fa fa-book fa-lg', iconClass: 'is-medium', text: '文档', link: '/docs/' },
-      { icon: 'fab fa-lg fa-gitlab', iconClass: 'is-medium', text: 'gitlab', link: 'https://git.qutoutiao.net/npm/q-form' },
+      { icon: 'fab fa-lg fa-github', iconClass: 'is-medium', text: 'gitlab', link: 'https://github.com/ws456999/so-form' },
     ],
     sidebar: [
       {
