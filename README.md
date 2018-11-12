@@ -1,5 +1,3 @@
-
-
 <p align="center" style="text-align: center;"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
 <h2 style="text-align: center;" align="center">q-form 📰</h2>
 <p align="center" style="text-align: center;">渐进式通用vue表单</p>
@@ -7,23 +5,36 @@
 [![pipeline status](https://git.qutoutiao.net/npm/q-form/badges/master/pipeline.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)[![coverage report](https://git.qutoutiao.net/npm/q-form/badges/master/coverage.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)
 
 ---
+
 ## Introduction
-q-form是一个自动双向数据绑定，可拓展，提供json-schema自动渲染出对应表单组件的一个插件
+
+- q-form 是一个自动双向数据绑定，可拓展，提供 json-schema 自动渲染出对应表单组件的一个插件
+- q-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置问题
+
+|  编写表单的流程从                  |
+| ---------------------------------- |
+| (`html` + `script`) -> 表单        |
+| ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️               |
+| `json配置` -> `q-form` -> `表单`， |
 
 ## feature
+
 - json-schema 2 form
 - 自动双向数据绑定
-- 表单支持自定义render（[jsx写法](https://cn.vuejs.org/v2/guide/render-function.html#JSX)）
-- 支持拓展components
+- 表单支持自定义 render（[jsx 写法](https://cn.vuejs.org/v2/guide/render-function.html#JSX)）
+- 支持拓展 components
 - 各种方便插槽
 - 全局切换`edit`/`preview`状态
-- 支持`element-ui`
+- 支持`element-ui`，后续会支持`iview`ui 框架等
 
 ## Links
 
 - 📘 [Documentation](http://qtt-frontend-gerrit.qutoutiao.net/ci/npm/q-form/docs/index.html)
 
+## example gif
+
 例如下图，通过左边的简单配置，就可以生成右边表单。
+![example](https://git.qutoutiao.net/npm/q-form/raw/master/static/basic.gif)
 
 ## install
 
@@ -40,6 +51,7 @@
 ```
 
 ## usage
+
 ```
   import qform from '@qtt/q-form'
 
@@ -50,13 +62,9 @@
 
 ```
 
-
 ```html
-  <!-- model 为表单数据中心，iFormItem 通用的vue表单会自动数据绑定 -->
-  <iForm :model="model">
-    <iFormRows :rows="rows"></iFormRows>
-  </iForm>
-
+<!-- model 为表单数据中心，iFormItem 通用的vue表单会自动数据绑定 -->
+<iForm :model="model"> <iFormRows :rows="rows"></iFormRows> </iForm>
 ```
 
 ```js
@@ -84,7 +92,8 @@
 ```
 
 ## 组件
-- custom(自己写render)
+
+- custom(自己写 render)
 - input
 - textarea
 - select
@@ -103,25 +112,28 @@
 
 ## todo
 
-- [x] label可render
+- [x] label 可 render
 - [x] `<FormRows>` 组件
 - [x] `option`组件支持传参
 - [x] 全局切换`edit`/`preview`状态
 - [x] `formItem` 支持 `prefix` 等插槽
-- [x] `when`/` 参数 可以控制`<formitem>`渲染
-- [x] 注册自定义form组件
+- [x] `when`/`参数 可以控制`<formitem>`渲染
+- [x] 注册自定义 form 组件
 - [x] 完善文档
-- [ ] 支持iview
+- [ ] 支持 iview
 
 ## changelog
-*2018-11-12*
+
+_2018-11-12_
+
 - 提供文档
 
-*2018-11-07*
-- 支持注册自定义form组件
+_2018-11-07_
+
+- 支持注册自定义 form 组件
 - add when props
 
-*2018-11-05*
+_2018-11-05_
 
 - 添加全局切换`edit`/`preview`状态功能
 
@@ -130,4 +142,4 @@
 > 如果存在`bug`或者有好的一些改善意见建议，💡
 
 - 可在`km`上评论，[传送门](http://km.qutoutiao.net/display/MD/q-form)
-- 也可在npm中直接写issue， [传送门](https://git.qutoutiao.net/npm/q-form/issues)
+- 也可在 npm 中直接写 issue， [传送门](https://git.qutoutiao.net/npm/q-form/issues)
