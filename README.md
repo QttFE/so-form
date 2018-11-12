@@ -4,11 +4,9 @@
 
 [![pipeline status](https://git.qutoutiao.net/npm/q-form/badges/master/pipeline.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)[![coverage report](https://git.qutoutiao.net/npm/q-form/badges/master/coverage.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)
 
----
-
 ## Introduction
 
-- q-form 是一个自动双向数据绑定，可拓展，提供 json-schema 自动渲染出对应表单组件的一个插件
+- q-form 是一个自动双向数据绑定，可拓展，提供 `json-schema` 自动渲染出对应表单组件`vue`插件
 - q-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置问题
 
 ## feature
@@ -19,7 +17,7 @@
 - 支持拓展 components
 - 各种方便插槽
 - 全局切换`edit`/`preview`状态
-- 支持`element-ui`，后续会支持`iview`ui 框架等
+- 支持`element-ui`，后续会支持iview等ui框架
 
 ## Links
 
