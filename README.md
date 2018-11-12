@@ -1,13 +1,11 @@
 <p align="center" style="text-align: center;"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
-<h2 style="text-align: center;" align="center">q-form 📰</h2>
+<h2 style="text-align: center;" align="center">v-form 📰</h2>
 <p align="center" style="text-align: center;">渐进式通用vue表单</p>
-
-[![pipeline status](https://git.qutoutiao.net/npm/q-form/badges/master/pipeline.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)[![coverage report](https://git.qutoutiao.net/npm/q-form/badges/master/coverage.svg)](https://git.qutoutiao.net/npm/q-form/commits/master)
 
 ## Introduction
 
-- q-form 是一个自动双向数据绑定，可拓展，提供 `json-schema` 自动渲染出对应表单组件`vue`插件
-- q-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置问题
+- v-form 是一个自动双向数据绑定，可拓展，提供 `json-schema` 自动渲染出对应表单组件`vue`插件
+- v-form 对第三方组件库无侵入，提供了高度抽象能力解决繁琐的表单配置插件
 
 ## feature
 
@@ -22,7 +20,8 @@
 ## example gif
 
 例如下图，通过左边的简单配置，就可以生成右边表单。
-![example](https://git.qutoutiao.net/npm/q-form/raw/master/static/basic.gif)
+
+![example](./static/basic.gif)
 
 ## install
 
@@ -34,7 +33,7 @@
   "plugins": ["transform-vue-jsx"]
 
   # 引入
-  npm i @qtt/q-form --save
+  npm i v-form --save
 
 ```
 
@@ -79,10 +78,3 @@ _2018-11-07_
 _2018-11-05_
 
 - 添加全局切换`edit`/`preview`状态功能
-
-## issue 🤔
-
-> 如果存在`bug`或者有好的一些改善意见建议，💡
-
-- 可在`km`上评论，[传送门](http://km.qutoutiao.net/display/MD/q-form)
-- 也可在 npm 中直接写 issue， [传送门](https://git.qutoutiao.net/npm/q-form/issues)
