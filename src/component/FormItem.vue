@@ -1,6 +1,6 @@
 <script>
-import {parsePath, checkWhen, deepCopy} from '../wrapper/util'
-import {getConfig} from '../adaptation/config'
+import { parsePath, checkWhen, deepCopy } from '../wrapper/util'
+import { getConfig } from '../adaptation/config'
 import set from 'set-object-path'
 
 let config = getConfig()
@@ -31,9 +31,9 @@ export default {
     let attrs = {
       ...props,
       on: deepCopy(props.on) || {},
-      props: deepCopy(props.props),
+      props: deepCopy(props.props)
     }
-    attrs.on.input = (e) => {
+    attrs.on.input = e => {
       props.on.input && props.on.input(e)
       this.$emit('input', e)
     }
@@ -42,7 +42,7 @@ export default {
     // attrs.props.value = parsePath(this.elForm.model, attrs.name)
     attrs.props.value = parsePath(this[config.injectFormName].model, attrs.name)
 
-    this.$on('input', (e) => {
+    this.$on('input', e => {
       // 双向数据绑定实现
       set(this[config.injectFormName].model, attrs.name, e)
     })
@@ -60,40 +60,47 @@ export default {
     let isWhen = checkWhen(attrs.when)
     if (hasWhen && !isWhen) return null
 
-  return (
-    <this.$formmWrapped.source.FormItem {...formItemProps}>
-      {attrs.slots && Object.keys(attrs.slots).map(slot => (
-        <div style="display: inline-block;" slot={slot}>
-          {attrs.slots[slot](h)}
+    return (
+      <this.$formmWrapped.source.FormItem {...formItemProps}>
+        {attrs.slots &&
+          Object.keys(attrs.slots).map(slot => (
+            <div style="display: inline-block;" slot={slot}>
+              {attrs.slots[slot](h)}
+            </div>
+          ))}
+        {// top 插槽
+        attrs.top && (
+          <div class="formm-wrapped_top">{context2Jsx(h, attrs.top)}</div>
+        )}
+        {/* main */}
+        <div class="formm-wrapped_flex">
+          {attrs.prefix && (
+            <div class="formm-wrapped_prefix">
+              {context2Jsx(h, attrs.prefix)}
+            </div>
+          )}
+          {/* prefix 插槽 */}
+          <div class="formm-wrapped_div">
+            {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
+          </div>
+          {/* suffix 插槽 */}
+          {attrs.suffix && (
+            <div class="formm-wrapped_suffix">
+              {context2Jsx(h, attrs.suffix)}
+            </div>
+          )}
         </div>
-      ))}
-      {
-      // top 插槽
-        attrs.top && (context2Jsx(h, attrs.top))
-      }
-      {/* main */}
-      <div class="formm-wrapped_flex">
-        {attrs.prefix && context2Jsx(h, attrs.prefix)}
-        {/* prefix 插槽 */}
-        <div class="formm-wrapped_div">
-          {this.$formmWrapped[this.$attrs.type](h, attrs, this)}
-        </div>
-        {/* suffix 插槽 */}
-        {attrs.suffix && context2Jsx(h, attrs.suffix)}
-      </div>
 
-      {
-        // bottom 插槽
-        attrs.bottom && (context2Jsx(h, attrs.bottom))
-      }
-    </this.$formmWrapped.source.FormItem>
+        {// bottom 插槽
+        attrs.bottom && context2Jsx(h, attrs.bottom)}
+      </this.$formmWrapped.source.FormItem>
     )
   },
-  mounted () {
+  mounted() {
     // initialize statusCenter && callback
     if (this.$attrs.name && this.statusEmitter) {
-      this.statusEmitter.core.emit('init', {[this.$attrs.name]: 'edit'})
-      this.statusEmitter.core.on('update', (obj) => {
+      this.statusEmitter.core.emit('init', { [this.$attrs.name]: 'edit' })
+      this.statusEmitter.core.on('update', obj => {
         if (!obj) return
 
         if (obj.name === this.$attrs.name && this.status !== obj.status) {
@@ -112,5 +119,11 @@ export default {
 }
 .formm-wrapped_div {
   width: 100%;
+}
+.formm-wrapped_suffix {
+  margin-left: 10px;
+}
+.formm-wrapped_prefix {
+  margin-right: 10px;
 }
 </style>

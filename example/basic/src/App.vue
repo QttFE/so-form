@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <iForm label-width="100px" :rules="rules" :model="model" style="width: 500px;" ref="ruleForm">
+    <mform label-width="100px" :rules="rules" :model="model" style="width: 500px;" ref="ruleForm">
       <!-- <iFormItem v-for="(col, index) in columns" v-bind="col" :key="index"></iFormItem> -->
       <iFormRows :rows="columns"></iFormRows>
-    </iForm>
+    </mform>
     <button @click="setStatus">status preview</button>
     <button @click="setStatusEdit">status edit</button>
     <button @click="setStatusDisabled">status disabled</button>

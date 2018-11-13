@@ -7,7 +7,11 @@ body, html {
 }
 
 .con-box .box {
-  box-shadow: 0 1px 45px -5px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 1px 45px -5px rgba(0, 0, 0, 0.15) !important;
+  transition: all .2s;
+}
+.con-box .box:hover {
+  box-shadow: 0 1px 45px -5px rgba(0, 0, 0, 0.25) !important;
 }
 
 .con-vuecode {

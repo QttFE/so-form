@@ -26,6 +26,7 @@ module.exports = {
           // ['/docs/started/install', '安装'],
           ['/docs/started/started', '快速上手'],
           ['/docs/started/component-list', '目前支持组件'],
+          ['/docs/started/rename-component', '重命名全局组件'],
         ]
       },
       {

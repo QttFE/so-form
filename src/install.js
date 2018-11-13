@@ -1,4 +1,5 @@
 import { setConfig } from './adaptation/config'
+import { parsePath } from './wrapper/util'
 
 let iForm, iFormItem, iFormRows
 
@@ -16,9 +17,9 @@ const install = function(Vue, opts = {}) {
   iFormItem = require('./component/FormItem.vue').default
   iFormRows = require('./component/FormRows.vue').default
 
-  Vue.component('iForm', iForm)
-  Vue.component('iFormItem', iFormItem)
-  Vue.component('iFormRows', iFormRows)
+  Vue.component(parsePath(opts, 'rename.form') || 'iForm', iForm)
+  Vue.component(parsePath(opts, 'rename.formItem') || 'iFormItem', iFormItem)
+  Vue.component(parsePath(opts, 'rename.formRows') || 'iFormRows', iFormRows)
 }
 
 /* istanbul ignore if */
