@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "element-ui": "^2.4.8",
+    "iview": "^3.1.5",
     "so-form": "^0.1.1",
     "vue": "^2.5.17"
   },
