@@ -28,7 +28,7 @@ import 'iview/dist/styles/iview.css';
 import soform from 'so-form'
 
 Vue.use(iView)
-Vue.use(qform, {
+Vue.use(soform, {
   type: 'iview',
   source: iView
 })

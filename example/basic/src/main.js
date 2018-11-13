@@ -3,12 +3,12 @@ import App from './App.vue'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import wrapperElement from './formm/wrapper/element'
-// import qform from 'so-form'
-import qform from '../../../src/install'
+// import so-form from 'so-form'
+import soform from '../../../src/install'
 import custom from './custom'
 
 Vue.use(Element)
-Vue.use(qform, {
+Vue.use(soform, {
   source: Element,
   components: {
     test: custom

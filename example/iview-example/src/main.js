@@ -5,12 +5,12 @@ import 'iview/dist/styles/iview.css';
 // import Element from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
 // import wrapperElement from './formm/wrapper/element'
-// import qform from 'so-form'
-import qform from '../../../src/install'
+// import so-form from 'so-form'
+import soform from '../../../src/install'
 import custom from './custom'
 
 Vue.use(iView)
-Vue.use(qform, {
+Vue.use(soform, {
   type: 'iview',
   source: iView
 })

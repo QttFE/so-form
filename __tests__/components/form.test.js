@@ -1,13 +1,13 @@
 import { shallowMount, createLocalVue, mount, config } from '@vue/test-utils'
 import Element from 'element-ui'
-import qform from '../../src/install.js'
+import soform from '../../src/install.js'
 import Form from '../../src/component/Form.vue'
 import FormRows from '../../src/component/FormRows.vue'
 import { doesNotReject } from 'assert';
 
 config.stubs.transition = false
 const localVue = createLocalVue()
-localVue.use(qform, {
+localVue.use(soform, {
   source: Element
 })
 

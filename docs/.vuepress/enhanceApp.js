@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Element from 'element-ui'
-import qform from '../../src/install'
+import soform from '../../src/install'
 import Vuecode from 'viewcode/dist/vuecode.common.js'
 import Box from './components/theme/box.vue'
 
@@ -17,7 +17,7 @@ export default ({
   siteData
 }) => {
   Vue.use(Element)
-  Vue.use(qform, {
+  Vue.use(soform, {
     source: Element,
     components: {
       customComponent: custom

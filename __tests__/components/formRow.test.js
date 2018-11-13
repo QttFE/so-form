@@ -1,12 +1,12 @@
 import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
 import Element from 'element-ui'
 
-import qform from '../../src/install.js'
+import soform from '../../src/install.js'
 import Form from '../../src/component/Form.vue'
 import FormRows from '../../src/component/FormRows.vue'
 
 const localVue = createLocalVue()
-localVue.use(qform, {
+localVue.use(soform, {
   source: Element,
 })
 

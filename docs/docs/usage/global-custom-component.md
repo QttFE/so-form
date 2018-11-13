@@ -15,7 +15,7 @@ ps: 组件双向数据绑定能力跟组件的各种状态都需要自行编写
 
 ```js
   //  main.js 内
-  Vue.use(qform, {
+  Vue.use(soform, {
     source: Element,
     // 注册全局组件type
     components: {
