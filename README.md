@@ -15,7 +15,7 @@
 - 支持拓展 components
 - 各种方便插槽
 - 全局切换`edit`/`preview`状态
-- 支持`element-ui`，后续会支持iview等ui框架
+- 目前支持`element-ui`跟`iview` ui框架
 
 ## install
 
