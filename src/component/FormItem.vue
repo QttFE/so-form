@@ -2,7 +2,8 @@
 import {parsePath, checkWhen, deepCopy} from '../wrapper/util'
 import {getConfig} from '../adaptation/config'
 import set from 'set-object-path'
-const adaptationConfig = getConfig()
+
+let config = getConfig()
 
 function context2Jsx(h, input) {
   if (typeof input === 'string') return <span>{input}</span>
@@ -13,7 +14,7 @@ function context2Jsx(h, input) {
 }
 
 export default {
-  inject: [adaptationConfig.injectFormName, 'statusEmitter'],
+  inject: [config.injectFormName, 'statusEmitter'],
   // inject: ['elForm', 'statusEmitter'],
   data: () => ({
     status: 'edit'
@@ -39,11 +40,11 @@ export default {
 
     // 从model层拿数据
     // attrs.props.value = parsePath(this.elForm.model, attrs.name)
-    attrs.props.value = parsePath(this.form.model, attrs.name)
+    attrs.props.value = parsePath(this[config.injectFormName].model, attrs.name)
 
     this.$on('input', (e) => {
       // 双向数据绑定实现
-      set(this.form.model, attrs.name, e)
+      set(this[config.injectFormName].model, attrs.name, e)
     })
 
     // from item props

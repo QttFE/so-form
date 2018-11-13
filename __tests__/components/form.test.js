@@ -1,11 +1,11 @@
-import { shallowMount, createLocalVue, mount } from '@vue/test-utils'
+import { shallowMount, createLocalVue, mount, config } from '@vue/test-utils'
 import Element from 'element-ui'
-
 import qform from '../../src/install.js'
 import Form from '../../src/component/Form.vue'
 import FormRows from '../../src/component/FormRows.vue'
 import { doesNotReject } from 'assert';
 
+config.stubs.transition = false
 const localVue = createLocalVue()
 localVue.use(qform, {
   source: Element
@@ -80,7 +80,7 @@ describe('components/form basic function', () => {
         render(h) {
           return (
             <Form ref="form" model={this.model}>
-              <iFormRows rows={this.columns} />
+              <FormRows rows={this.columns} />
             </Form>
           )
         }

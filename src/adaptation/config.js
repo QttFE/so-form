@@ -35,5 +35,5 @@ export function setConfig(type = 'element') {
  * @returns
  */
 export function getConfig() {
-  return adaptationConfig
+  return adaptationConfig || configEnum['element']
 }
