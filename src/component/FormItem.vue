@@ -1,6 +1,8 @@
 <script>
 import {parsePath, checkWhen, deepCopy} from '../wrapper/util'
+import {getConfig} from '../adaptation/config'
 import set from 'set-object-path'
+const adaptationConfig = getConfig()
 
 function context2Jsx(h, input) {
   if (typeof input === 'string') return <span>{input}</span>
@@ -11,7 +13,8 @@ function context2Jsx(h, input) {
 }
 
 export default {
-  inject: ['elForm', 'statusEmitter'],
+  inject: [adaptationConfig.injectFormName, 'statusEmitter'],
+  // inject: ['elForm', 'statusEmitter'],
   data: () => ({
     status: 'edit'
   }),
@@ -35,11 +38,12 @@ export default {
     }
 
     // 从model层拿数据
-    attrs.props.value = parsePath(this.elForm.model, attrs.name)
+    // attrs.props.value = parsePath(this.elForm.model, attrs.name)
+    attrs.props.value = parsePath(this.form.model, attrs.name)
 
     this.$on('input', (e) => {
       // 双向数据绑定实现
-      set(this.elForm.model, attrs.name, e)
+      set(this.form.model, attrs.name, e)
     })
 
     // from item props
@@ -56,7 +60,7 @@ export default {
     if (hasWhen && !isWhen) return null
 
   return (
-    <this.$formmWrapped.ele.FormItem {...formItemProps}>
+    <this.$formmWrapped.source.FormItem {...formItemProps}>
       {attrs.slots && Object.keys(attrs.slots).map(slot => (
         <div style="display: inline-block;" slot={slot}>
           {attrs.slots[slot](h)}
@@ -81,7 +85,7 @@ export default {
         // bottom 插槽
         attrs.bottom && (context2Jsx(h, attrs.bottom))
       }
-    </this.$formmWrapped.ele.FormItem>
+    </this.$formmWrapped.source.FormItem>
     )
   },
   mounted () {

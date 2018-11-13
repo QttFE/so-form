@@ -67,3 +67,33 @@ export function checkWhen(input) {
     return input()
   }
 }
+
+/**
+ * preview态
+ *
+ * @param {*} value
+ * @returns
+ */
+export function renderValue(h, value) {
+  if (value === null || value === undefined) return null // 空值直接返回
+
+  if (Array.isArray(value)) {
+    const arrValue = value.map(valItem => (
+      <span className="multi-value-item">{valItem}</span>
+    ))
+
+    return <div className="multi-value-item-wrapper">{arrValue}</div>
+  }
+
+  return <span>{(typeof value === 'boolean') ? value.toString() : value}</span>
+}
+
+export function renderOption (h, props) {
+  let result = ''
+  props.options && props.options.forEach(option => {
+    if ((option.value || option.id) === props.props.value) result = option.name || option.label || ''
+  })
+
+  return <span>{result}</span>
+}
+

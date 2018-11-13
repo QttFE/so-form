@@ -1,14 +1,20 @@
-import wrapperElement from './wrapper/element.js'
-import iFormItem from './component/FormItem.vue'
-import iForm from './component/Form.vue'
-import iFormRows from './component/FormRows.vue'
+import { setConfig } from './adaptation/config'
 
+let iForm, iFormItem, iFormRows
+
+/* vue plugin install function */
 const install = function(Vue, opts = {}) {
-  let wrappedComponent = wrapperElement(opts.source)
+  let config = setConfig(opts.type)
+  let wrappedComponent = config.wrapper(opts.source)
+
   Vue.prototype.$formmWrapped = {
     ...wrappedComponent,
     ...(opts.components || {})
   }
+
+  iForm = require('./component/Form.vue').default
+  iFormItem = require('./component/FormItem.vue').default
+  iFormRows = require('./component/FormRows.vue').default
 
   Vue.component('iForm', iForm)
   Vue.component('iFormItem', iFormItem)
@@ -21,6 +27,3 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default install
-
-export const FormItem = FormItem
-export const Form = iForm

@@ -3,7 +3,7 @@ import { formatValue, renderValue, renderOption } from './util'
 import omit from 'object.omit'
 
 /**
- * element 封装组件
+ * iview 封装组件
  *
  * @class WrapperClass
  */

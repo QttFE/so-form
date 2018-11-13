@@ -39,9 +39,9 @@ export default {
     }
 
     return (
-        <this.$formmWrapped.ele.Form {...config}>
+        <this.$formmWrapped.source.Form {...config}>
           {(this.$slots.default)}
-        </this.$formmWrapped.ele.Form>
+        </this.$formmWrapped.source.Form>
     )
   },
   created () {
