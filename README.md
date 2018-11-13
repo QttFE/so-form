@@ -62,7 +62,10 @@
 
 ## todo
 
-- [ ] 支持 iview
+- [x] 支持 iview
+- [ ] babel插件，按需加载
+- [ ] 插槽要适当gap
+- [ ] global components 的重写名字
 
 ## changelog
 

@@ -82,6 +82,9 @@ body, html {
   color: #333;
   font-size: 40px;
 }
+.site-name {
+  display: none;
+}
 
 .token.attr-name {
   padding-left: 0.75em;
