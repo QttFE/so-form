@@ -11,8 +11,10 @@ install:
     - npm install
 
 script:
-    - npm test
+    - npm build
     - npm run coverage
+
+after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 
 # deploy:
 #     provider: npm

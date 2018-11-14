@@ -1,8 +1,9 @@
 <p align="center"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
-<h2 align="center">so-form 📰, 渐进式通用vue表单</h2>
+<h4 align="center">so-form 📰, 渐进式通用vue表单</h4>
 <p align="center"></p>
 
 [![Build Status](https://travis-ci.com/ws456999/so-form.svg?branch=master)](https://travis-ci.com/ws456999/so-form)
+[![Coverage Status](https://coveralls.io/repos/github/ws456999/so-form/badge.svg?branch=master)](https://coveralls.io/github/ws456999/so-form?branch=master)
 
 ## Introduction
 
