@@ -1,9 +1,13 @@
 <p align="center"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
-<h4 align="center">so-form 📰, 渐进式通用vue表单</h4>
-<p align="center"></p>
+<p align="center">so-form, 渐进式通用vue表单</p>
 
-[![Build Status](https://travis-ci.com/ws456999/so-form.svg?branch=master)](https://travis-ci.com/ws456999/so-form)
-[![Coverage Status](https://coveralls.io/repos/github/ws456999/so-form/badge.svg?branch=master)](https://coveralls.io/github/ws456999/so-form?branch=master)
+<p align="center">
+  <a href="https://github.com/alibaba/ice/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg"></a>
+  <a href="https://travis-ci.com/ws456999/so-form">
+    <img src="https://travis-ci.com/ws456999/so-form.svg?branch=master"/>
+  </a>
+  <a href="https://coveralls.io/github/ws456999/so-form?branch=master"><img src="https://coveralls.io/repos/github/ws456999/so-form/badge.svg?branch=master" /></a>
+</p>
 
 ## Introduction
 
@@ -23,18 +27,11 @@
 ## install
 
 ```shell
-  # vue支持 jsx写法
-  npm i babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx --save-dev
-
-  # 在.babelrc文件中加入
-  "plugins": ["transform-vue-jsx"]
-
-  # 引入
   npm i so-form --save
-
 ```
 
 ## usage
+
 - 📘 [中文文档](https://ws456999.github.io/so-form/)
 
 
@@ -46,40 +43,16 @@
 
 ## 组件
 
-- custom(自己写 render)
-- input
-- textarea
-- select
-- checkbox
-- radio
-- switch
-- slider
-- datepicker
-- timeselect
-- timepicker
-- inputnumber
-- rate
-- cascader
-- tree
-- upload
+[目前支持的组件](https://ws456999.github.io/so-form/docs/started/component-list.html)
 
 ## todo
 
-- [x] 支持 iview
-- [x] global components rename
 - [ ] babel插件，按需加载
 
-## changelog
-_2018-11-13_
-- 支持iview
-- 支持 global components rename
+## Contribution
 
-_2018-11-12_
-- 提供文档
+Please send pull requests improving the usage and fixing bugs, improving documentation and providing better examples, or providing some testing, because these things are important.
 
-_2018-11-07_
-- 支持注册自定义 form 组件
-- add when props
+## License
 
-_2018-11-05_
-- 添加全局切换`edit`/`preview`状态功能
+so-form is available under the [MIT license](https://tldrlegal.com/license/mit-license).
