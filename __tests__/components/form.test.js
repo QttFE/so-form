@@ -161,11 +161,11 @@ describe('components/form basic function', () => {
   })
 
   test('render slot', () => {
-    let textArr = formInstance.findAll('.el-form-item[name="textarea"] .el-form-item__content > span').wrappers.map(v => v.text())
+    let textArr = formInstance.findAll('.el-form-item[name="textarea"] .el-form-item__content span').wrappers.map(v => v.text())
     expect(textArr.some(v => v === 'top')).toBeTruthy()
     expect(textArr.some(v => v === 'bottom')).toBeTruthy()
 
-    let textArr2 = formInstance.findAll('.el-form-item[name="textarea"] .formm-wrapped_flex > span').wrappers.map(v => v.text())
+    let textArr2 = formInstance.findAll('.el-form-item[name="textarea"] .formm-wrapped_flex span').wrappers.map(v => v.text())
     expect(textArr2.some(v => v === 'suffix')).toBeTruthy()
     expect(textArr2.some(v => v === 'prefix')).toBeTruthy()
   })
