@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import hello from './components/HelloWorld'
+
 export default {
   name: 'app',
   data: () => ({
@@ -46,10 +48,10 @@ export default {
         // { label: 'test', name: 'test', type: 'test'},
         // { label: 'datepicker', name: 'job1', type: 'InputNumber'},
         { label: '短信内容', name: 'msg', type: 'textarea', on: {}},
-        // { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是', border: true, on: {change: (e) => {
-        //   this.ttt()
-        // }}}]},
-        // { label: '是否昵称短信', name: 'isNickMsg1', type: 'checkbox', options: [{value: 1, name: 'a'}, {value: 2, name:'b'}] , on: {}},
+        { label: '是否昵称短信', name: 'isNickMsg', type: 'radio', options: [{value: 1, name: '否'}, {value: 2, name:'是', border: true, on: {change: (e) => {
+          this.ttt()
+        }}}]},
+        { label: '是否昵称短信', name: 'isNickMsg1', type: 'checkbox', options: [{value: 1, name: 'a'}, {value: 2, name:'b'}] , on: {}},
         // { label: '昵称短信内容', name: 'nickname', type: 'input', on: {}, props: {
         //     type: 'textarea'
         // }}

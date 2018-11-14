@@ -12,7 +12,6 @@ global.document = dom.window.document
 global.document.createRange = dom.window.document.createRange
 global.window = dom.window
 
-
 config.stubs.transition = false
 const localVue = createLocalVue()
 localVue.use(soform, {
@@ -31,7 +30,7 @@ describe('components/form basic function', () => {
           model: {
             cascader: [],
             checkbox: [1],
-            job: '',
+            job: '123',
             jobWhen: '',
             select: 1,
             radio: 1,
@@ -54,69 +53,69 @@ describe('components/form basic function', () => {
                   )
                 }
               },
+              {
+                label: 'whenRender',
+                name: 'jobWhen',
+                type: 'input',
+                when: this.when
+              },
+              {
+                label: 'textarea',
+                name: 'textarea',
+                type: 'textarea',
+                top: h => <span>top</span>,
+                suffix: 'suffix',
+                prefix: 'prefix',
+                bottom: 'bottom'
+              },
               // {
-              //   label: 'whenRender',
-              //   name: 'jobWhen',
-              //   type: 'input',
-              //   when: this.when
-              // },
-              // {
-              //   label: 'textarea',
-              //   name: 'textarea',
-              //   type: 'textarea',
-              //   top: h => <span>top</span>,
-              //   suffix: 'suffix',
-              //   prefix: 'prefix',
-              //   bottom: 'bottom'
-              // },
-              // // {
-              // //   name: 'select',
-              // //   type: 'select',
-              // //   options: [{ value: 1, name: '否' }, { value: 2, name: '是' }]
-              // // },
-              // {
-              //   label: '是否昵称短信',
-              //   name: 'checkbox',
-              //   type: 'checkbox',
-              //   options: [{ value: 1, name: 'a' }, { value: 2, name: 'b' }],
-              //   on: {}
-              // },
-              // {
-              //   label: 'radio',
-              //   name: 'radio',
-              //   type: 'radio',
+              //   name: 'select',
+              //   type: 'select',
               //   options: [{ value: 1, name: '否' }, { value: 2, name: '是' }]
               // },
+              {
+                label: '是否昵称短信',
+                name: 'checkbox',
+                type: 'checkbox',
+                options: [{ value: 1, name: 'a' }, { value: 2, name: 'b' }],
+                on: {}
+              },
+              {
+                label: 'radio',
+                name: 'radio',
+                type: 'radio',
+                options: [{ value: 1, name: '否' }, { value: 2, name: '是' }]
+              },
               // { label: 'slider', name: 'slider', type: 'slider' },
-              // {
-              //   label: 'upload',
-              //   name: 'upload',
-              //   type: 'upload',
-              //   props: {
-              //     action: 'https://jsonplaceholder.typicode.com/posts/',
-              //     slots: { default: h => <button>123</button> }
-              //   }
-              // },
-              // // { label: 'tree', name: 'tree', type: 'tree', props: {data: []} },
-              // // { label: 'cascader', name: 'cascader', type: 'cascader', props: {options: []} },
-              // { label: 'switch', name: 'switch', type: 'switch' },
-              // // { label: 'datepicker', name: 'datepicker', type: 'datepicker' },
-              // // { label: 'timeselect', name: 'timeselect', type: 'timeselect' },
-              // // { label: 'timepicker', name: 'timepicker', type: 'timepicker' },
-              // {
-              //   label: 'inputnumber',
-              //   name: 'inputnumber',
-              //   type: 'inputnumber'
-              // },
-              // { label: 'rate', name: 'rate', type: 'rate' },
-              // {
-              //   label: 'cu',
-              //   name: 'custom',
-              //   type: 'custom',
-              //   render(h) {
-              //     return <span>自定义内容</span>
-              //   }
-              // }
+              {
+                label: 'upload',
+                name: 'upload',
+                type: 'upload',
+                props: {
+                  action: 'https://jsonplaceholder.typicode.com/posts/',
+                  slots: { default: h => <button>123</button> }
+                }
+              },
+              // { label: 'tree', name: 'tree', type: 'tree', props: {data: []} },
+              // { label: 'cascader', name: 'cascader', type: 'cascader', props: {options: []} },
+              { label: 'switch', name: 'switch', type: 'switch' },
+              // { label: 'datepicker', name: 'datepicker', type: 'datepicker' },
+              // { label: 'timeselect', name: 'timeselect', type: 'timeselect' },
+              // { label: 'timepicker', name: 'timepicker', type: 'timepicker' },
+              {
+                label: 'inputnumber',
+                name: 'inputnumber',
+                type: 'inputnumber'
+              },
+              { label: 'rate', name: 'rate', type: 'rate' },
+              {
+                label: 'cu',
+                name: 'custom',
+                type: 'custom',
+                render(h) {
+                  return <span>自定义内容</span>
+                }
+              }
             ]
           }
         },
@@ -141,16 +140,17 @@ describe('components/form basic function', () => {
 
   test('set form reactive', () => {
     let formRef = formInstance.vm.$refs.form
-    formInstance.vm.model.job = '444'
-    expect(formInstance.find('.el-input input').element.value).toBe('444')
 
-    formInstance.find('.el-input input').setValue('123')
+    formInstance.find('.ivu-input-wrapper input').setValue('123')
     expect(formInstance.vm.model.job).toBe('123')
+
+    // formInstance.vm.model.job = 444
+    // expect(formInstance.find('.ivu-input-wrapper input').element.value).toBe('444')
   })
 
-  test('render component', () => {
-    // expect(formInstance.findAll('.el-form-item').length).toBe(13)
-  })
+  // test('render component', () => {
+    // expect(formInstance.findAll('.formm-wrapped_div').length).toBe(13)
+  // })
 
   test('getStatus', () => {
     let formRef = formInstance.vm.$refs.form
@@ -164,7 +164,7 @@ describe('components/form basic function', () => {
     expect(formRef.getStatus('job')).toBe('preview')
 
     expect(
-      formInstance.find('.el-form-item[name="job"] .formm-wrapped_div').text()
+      formInstance.find('.ivu-form-item[name="job"] .formm-wrapped_div').text()
     ).toBe('444')
   })
 
@@ -188,7 +188,7 @@ describe('components/form basic function', () => {
   })
 
   test('render label', () => {
-    expect(formInstance.find('.el-form-item[name="job"] label').text()).toBe(
+    expect(formInstance.find('.ivu-form-item[name="job"] label').text()).toBe(
       '落地页个性化 by render'
     )
   })
@@ -196,28 +196,25 @@ describe('components/form basic function', () => {
   test('props when render', done => {
     jest.useRealTimers()
 
-    expect(formInstance.findAll('.el-form-item[name="jobWhen"]').length).toBe(0)
+    expect(formInstance.findAll('.ivu-form-item[name="jobWhen"]').length).toBe(0)
     let formRef = formInstance.vm.$refs.form
     formRef.when = true
     formInstance.vm.$forceUpdate()
 
     setTimeout(() => {
-      expect(formInstance.find('.el-form-item[name="jobWhen"]')).toBeDefined()
+      expect(formInstance.find('.ivu-form-item[name="jobWhen"]')).toBeDefined()
       done()
     }, 0)
   })
 
   test('render slot', () => {
     let textArr = formInstance
-      .findAll('.el-form-item[name="textarea"] .el-form-item__content span')
+      .findAll('[class^=formm-wrapped]')
       .wrappers.map(v => v.text())
+
     expect(textArr.some(v => v === 'top')).toBeTruthy()
     expect(textArr.some(v => v === 'bottom')).toBeTruthy()
-
-    let textArr2 = formInstance
-      .findAll('.el-form-item[name="textarea"] .formm-wrapped_flex span')
-      .wrappers.map(v => v.text())
-    expect(textArr2.some(v => v === 'suffix')).toBeTruthy()
-    expect(textArr2.some(v => v === 'prefix')).toBeTruthy()
+    expect(textArr.some(v => v === 'suffix')).toBeTruthy()
+    expect(textArr.some(v => v === 'prefix')).toBeTruthy()
   })
 })

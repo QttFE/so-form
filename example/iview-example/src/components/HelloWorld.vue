@@ -31,6 +31,8 @@
 </template>
 
 <script>
+// import item from '../../../../src/component/FormItem.vue'
+// console.log(item)
 
 export default {
   name: 'HelloWorld',
