@@ -3,23 +3,13 @@ import { parsePath, checkWhen, deepCopy } from '../wrapper/util'
 import { getConfig } from '../adaptation/config'
 import set from 'set-object-path'
 
-let config = getConfig()
-
-function context2Jsx(h, input) {
-  if (typeof input === 'string') return <span>{input}</span>
-
-  if (typeof input === 'function') {
-    return input(h)
-  }
-}
-
 export default {
-  inject: [config.injectFormName, 'statusEmitter'],
-  // inject: ['elForm', 'statusEmitter'],
+  inject: [getConfig().injectFormName, 'statusEmitter'],
   data: () => ({
     status: 'edit'
   }),
   render(h) {
+    let config = getConfig()
     let props = deepCopy(this.$attrs) || {}
     props.props = props.props || {}
     props.on = props.on || {}
@@ -92,7 +82,9 @@ export default {
         </div>
 
         {// bottom 插槽
-        attrs.bottom && context2Jsx(h, attrs.bottom)}
+        attrs.bottom && (
+          <div class="formm-wrapped_bottom">{context2Jsx(h, attrs.bottom)}</div>
+        )}
       </this.$formmWrapped.source.FormItem>
     )
   },
@@ -109,6 +101,14 @@ export default {
         }
       })
     }
+  }
+}
+
+function context2Jsx(h, input) {
+  if (typeof input === 'string') return <span>{input}</span>
+
+  if (typeof input === 'function') {
+    return input(h)
   }
 }
 </script>
