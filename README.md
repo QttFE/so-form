@@ -1,6 +1,8 @@
-<p align="center" style="text-align: center;"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
-<h2 style="text-align: center;" align="center">so-form 📰</h2>
-<p align="center" style="text-align: center;">渐进式通用vue表单</p>
+<p align="center"><img width="200" src="./docs/.vuepress/public/logo.png"></p>
+<h2 align="center">so-form 📰, 渐进式通用vue表单</h2>
+<p align="center"></p>
+
+[![Build Status](https://travis-ci.com/ws456999/so-form.svg?branch=master)](https://travis-ci.com/ws456999/so-form)
 
 ## Introduction
 
