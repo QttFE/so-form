@@ -1,8 +1,17 @@
 {
   "name": "so-form",
   "version": "0.1.2",
-  "description": "",
+  "description": "generate form by json schema for vue.js",
   "main": "dist/so-form.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ws456999/so-form.git"
+  },
+  "keywords": [
+    "vue",
+    "form",
+    "validation"
+  ],
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
